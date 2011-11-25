@@ -21,6 +21,8 @@
 /*[¤[TeRmiNuS]@[menu_tag_css]¤v_1.7¤ ... */
 /*[date¤11:11:2011]¤¤code_[ ... */
 
+* {z-index:1;cursor:default;}/**/
+*:hover {z-index:1000;}
 
 section,header,article,footer,menu {display:block;}	/* html5 ... :/ ... */
 
@@ -42,7 +44,7 @@ section menu[type="context"]>menu{position:absolute;visibility:hidden;}	/*-opaci
 
 /* section menu[type="context"]>*>*{position:static;}  *//* ... çàáàâíûé ýôôåêò [-hidden+opacity [!i!f] íîâûé ïðèíöèï ] ... ïåðåêðûâàåò toolbar è a=href ïðè +position:relative; ... [context>context!context>BUGfix] ... êÐÎÌÅ ÝÒÎãî ñì. âûøå ...  */
 
-section menu[type="context"]:hover>*{visibility:visible;opacity:1;z-index:1000;}			/*... fired hover ... */
+section menu[type="context"]:hover>*{visibility:visible;opacity:1;}			/*z-index:1000;... fired hover ... */
 
 section menu[type="context"]>menu{left:100%;top:0%;opacity:0;background-color:transparent;}		/*float vector*/
 section menu[type="toolbar"]>menu[type="context"]>*{left:0%;top:100%;}		/*float vector*/
