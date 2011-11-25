@@ -42,7 +42,7 @@ section menu[type="context"]>menu{position:absolute;opacity:0;visibility:hidden;
 
 /* section menu[type="context"]>*>*{position:static;}  *//* ... забавный эффект [-hidden+opacity [!i!f] новый принцип ] ... перекрывает toolbar и a=href при +position:relative; ... [context>context!context>BUGfix] ... к–ќћ≈ Ё“ќго см. выше ...  */
 
-section menu:hover>*{visibility:visible;opacity:1;z-index:1000;}			/*... fired hover ... */
+section menu[type="context"]:hover>*{visibility:visible;opacity:1;z-index:1000;}			/*... fired hover ... */
 
 section menu[type="context"]>*{left:100%;top:0%;}		/*float vector*/
 section menu[type="toolbar"]>menu[type="context"]>*{left:0%;top:100%;}		/*float vector*/
