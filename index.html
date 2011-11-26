@@ -227,36 +227,50 @@ box-shadow:0 0 24px #000000;
 
 &nbsp;
 
-<menu type="toolbar_">type="toolbar_"<menu>Toolbar
+<menu type="toolbar_">menu type="toolbar_"<menu>Toolbar
 	<menu>Menu
 	</menu>
 	<menu><a href="#url">a=href</a>
 	</menu>
-	<menu>Menu<a href="#url">a=href</a>
+	<menu>=Menu<a href="#url">[a=href]</a>
 	</menu>
-	<menu type="context_">type="context_"<menu>Context
-		<menu>Menu
+	<menu type="context_">[menu type="context_"<menu>Context
+		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
 		</menu>
-		<menu>Menu<a href="#url">a=href</a>
-		</menu>
-		<menu type="context_">type="context_"<menu>Context
-			<menu>Menu
+		<menu type="context_">[menu&nbsp;type="context_"<menu>next&nbsp;Context
+			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context_">type="context_"<menu type="hole">Context
-				<menu>&nbsp;
+			<menu type="context_">[menu&nbsp;type="context_"<menu type="hole">hole&nbsp;Context
+				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
 				</menu>
-				<menu>=
-				</menu>
-			</menu></menu>
-			<menu>
+				<menu type="hole">hole
+				</menu>end&nbsp;hole&nbsp;Context
+			</menu>]</menu>end&nbsp;next&nbsp;Context
+		</menu>]</menu>
+		<menu>=
+		</menu>end Context
+	</menu>]</menu>
+	<menu type="toolbar_">type=toolbar<menu>Toolbar
+		<menu>=
+		</menu>
+		<menu><a href="#url">a=href</a>
+		</menu>
+		<menu type="context_">=context<menu>comtext
+			<menu>=
+			</menu>
+			<menu><a href="#url">a=href</a>
+			</menu>
+			<menu>&nbsp;
 			</menu>
 		</menu></menu>
+	</menu></menu>
+	<menu type="context_">context&gt;toolbar
 		<menu type="toolbar_">type=toolbar<menu>Toolbar
 			<menu>=
 			</menu>
@@ -271,24 +285,8 @@ box-shadow:0 0 24px #000000;
 				</menu>
 			</menu></menu>
 		</menu></menu>
-		<menu type="context_">context&gt;toolbar
-			<menu type="toolbar_">type=toolbar<menu>Toolbar
-				<menu>=
-				</menu>
-				<menu><a href="#url">a=href</a>
-				</menu>
-				<menu type="context_">=context<menu>comtext
-					<menu>=
-					</menu>
-					<menu><a href="#url">a=href</a>
-					</menu>
-					<menu>&nbsp;
-					</menu>
-				</menu></menu>
-			</menu></menu>
-		</menu>
-	</menu></menu>
-	<menu type="context_">toolbar&gt;toolbar<menu>
+	</menu>
+	<menu type="toolbar_">toolbar&gt;&gt;toolbar<menu>Toolbar
 		<menu type="toolbar_">type=toolbar<menu>Toolbar
 			<menu>=
 			</menu>
@@ -308,7 +306,7 @@ box-shadow:0 0 24px #000000;
 				<menu>&nbsp;
 				</menu>
 			</menu></menu>
-		</menu></menu><br />=<br />==<br />===<br />=<br />==<br />=<br /><br /><br />=<br /><br /><br />=<br />
+		</menu></menu>
 		<menu type="toolbar_">type=toolbar_<menu>Toolbar
 			<menu type="context_">=context<menu>
 				<menu>=
@@ -328,26 +326,20 @@ box-shadow:0 0 24px #000000;
 
 	</menu></menu>
 
-			<menu type="context_">BUGfix<menu><i>overflow BUGfix</i>
-				<br />
-				<br />
-				<menu type="toolbar_"><menu>!toolbar
-					<menu type="context_">?toolbar<menu>
+	<menu type="context_">BUGfix<menu><i>overflow BUGfix</i>
+		<br />
+		<br />
+		<menu type="toolbar_"><menu>!toolbar
+			<menu type="context_">?toolbar<menu>
+				<menu type="toolbar_">*toolbar<menu>
+					<menu type="context_">+toolbar<br />&nbsp;<br />&nbsp;<menu>
 						<menu type="toolbar_"><menu>
-							<menu type="context_">?toolbar<br />&nbsp;<br />&nbsp;<menu>
+							<menu type="context_">=toolbar<br />&nbsp;<br />&nbsp;<menu>
 								<menu type="toolbar_"><menu>
-									<menu type="context_">?toolbar<br />&nbsp;<br />&nbsp;<menu>
+									<menu type="context_">#toolbar<br />&nbsp;<br />&nbsp;<menu>
 										<menu type="toolbar_"><menu>
-											<menu type="context_">?toolbar<br />&nbsp;<br />&nbsp;<menu>
-												<menu type="toolbar_"><menu>
-													<menu>-toolbar<br />&nbsp;<br />&nbsp;
-													</menu>
-													<menu>
-													</menu>
-													<menu>
-													</menu>
-												</menu></menu>
-											</menu></menu>
+											<menu>Menu<br />&nbsp;<br />&nbsp;
+											</menu>
 											<menu>
 											</menu>
 											<menu>
@@ -366,58 +358,65 @@ box-shadow:0 0 24px #000000;
 							</menu>
 						</menu></menu>
 					</menu></menu>
-						<menu type="context_">!context<menu type="hole">
-							<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-							<menu>overflow
-							</menu>
-						</menu></menu>
-						<menu type="context_">?context<menu>
-							<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-							<menu>overflow
-							</menu>
-						</menu></menu>
-				</menu></menu>
-				<br />
-				<br />
-				<menu type="toolbar_"><menu>overflow BUGfix
-					<menu type="hole">=hole
+					<menu>
 					</menu>
-					<menu type="context_">=context<menu><menu type="hole">
-						EMPTY type=context
-					</menu></menu></menu>
-					<menu type="context_">?context<menu>
-						<br /><br /><br /><br /><br /><br /><br /><br />
-						<menu>overflow
-						</menu>
-					</menu></menu>
-				</menu></menu>
-				<br />
-				<br />
-				<menu type="toolbar_"><menu>+toolbar
-					<menu>=
+					<menu>
 					</menu>
-					<menu type="context_">!context<menu type="hole">Hole
-						<menu>=
-						</menu>
-						<menu>=
-						</menu>
-						<menu><a href="#url">a=href</a>
-						</menu>
-					</menu></menu>
-					<menu type="context_">=context<menu type="hole">
-						EMPTY type=context
-					</menu></menu>
-					<br />
 				</menu></menu>
-				<br />
-				<br />
-				<menu type="hole"><a href="#url">a=href</a>
-				</menu>
-				<br />
-				<br />
 			</menu></menu>
+			<menu type="context_">!context<menu type="hole">
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				<menu>overflow
+				</menu>
+			</menu></menu>
+			<menu type="context_">?context<menu>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				<menu>overflow
+				</menu>
+			</menu></menu>
+		</menu></menu>
+		<br />
+		<br />
+		<menu type="toolbar_"><menu>overflow BUGfix
+			<menu type="hole">=hole
+			</menu>
+			<menu type="context_">=context<menu><menu type="hole">
+				EMPTY type=context
+			</menu></menu></menu>
+			<menu type="context_">?context<menu>
+				<br /><br /><br /><br /><br /><br /><br /><br />
+				<menu>overflow
+				</menu>
+			</menu></menu>
+		</menu></menu>
+		<br />
+		<br />
+		<menu type="toolbar_"><menu>+toolbar
+			<menu>=
+			</menu>
+			<menu type="context_">!context<menu type="hole">Hole
+				<menu>=
+				</menu>
+				<menu>=
+				</menu>
+				<menu><a href="#url">a=href</a>
+				</menu>
+			</menu></menu>
+			<menu type="context_">=context<menu type="hole">
+				EMPTY type=context
+			</menu></menu>
+			<br />
+		</menu></menu>
+		<br />
+		<br />
+		<menu type="hole"><a href="#url">a=href</a>
+		</menu>
+		<br />
+		<br />
+		&nbsp;<br />&nbsp;<br />&nbsp;end BUGfix_<br />
+	</menu></menu>
+	&nbsp;<br />&nbsp;<br />&nbsp;end Toolbar<br />
 </menu></menu>
-&nbsp;<br />&nbsp;<br />&nbsp;<br />
 
 <!--menu type="toolbar_">type=toolbar
 	<menu>menu
