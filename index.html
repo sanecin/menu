@@ -34,15 +34,15 @@ section,header,article,footer,menu {display:block;}	/* html5 ... :/ ... */
 
 section menu {border:none;}	/* ... +position:relative; ... так , может , было бы правильно ... но не так весело ... :/ ... */
 
-section menu[type="list"] {}		/*... futured ... */
+section menu[type="list"] {}		/*position:relative;... futured ... */
 section menu[type="list"]>menu{display:table-cell;}		/*... futured ... */
 
-section menu[type="toolbar_"]{position:relative;}	/* ->*/
+section menu[type="toolbar_"]{position:relative;}	/* if {} then floats out up level ... TAB style ... */
 section menu[type="toolbar_"]>menu{position:absolute;visibility:hidden;}		/*visibility:hidden; float vector*/
 section menu[type="toolbar_"]>menu{left:0%;top:100%;opacity:0;background-color:#00ff00; }		/*opacity:0;background-color:transparent; float vector*/
 section menu[type="toolbar_"]>menu>* {}	/* !display:table-cell;*/
 
-section menu[type="context_"]{position:relative;}	/* ! */
+section menu[type="context_"]{position:relative;}	/*  if {} then floats out up level ... TAB style ... */
 section menu[type="context_"]>menu{position:absolute;visibility:hidden;}	/*-opacity:без затухани€...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
 section menu[type="context_"]>menu{left:100%;top:0%;opacity:0;background-color:#ff00ff;}		/*transparent float vector*/
 /* section menu[type="context_"]>*>*{position:static;}  *//* ... забавный эффект [-hidden+opacity [!i!f] новый принцип ] ... перекрывает toolbar и a=href при +position:relative; ... [context>context!context>BUGfix] ... к–ќћ≈ Ё“ќго см. выше ...  */
@@ -419,7 +419,6 @@ box-shadow:0 0 24px #000000;
 		<menu type="hole"><a href="#url">a=href</a>
 		</menu>
 		<br />
-		<br />
 		end BUGfix_
 	</menu></menu>
 	end Toolbar
@@ -427,40 +426,42 @@ box-shadow:0 0 24px #000000;
 </menu>
 
 <menu>
-	<menu type="toolbar_">menu type="toolbar_"<menu>Toolbar
-		<menu>Menu
+	<menu type="toolbar_">[menu type="toolbar_"<menu>Toolbar
+		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
 		</menu>
-		<menu>[Menu]<a href="#url">[a=href]</a>
-		</menu>
-	</menu></menu>
-</menu>
-
-<menu>
-	<menu type="toolbar_">[menu type="toolbar_"<menu>Toolbar
-			<menu type="context_">!context<menu type="hole">Hole
-				<menu>=
-				</menu>
-				<menu>=
-				</menu>
-				<menu><a href="#url">a=href</a>
-				</menu>
-			</menu></menu>
-				<menu>=
-				</menu>end&nbsp;Toolbar
+		<menu>=
+		</menu>end&nbsp;Toolbar
 	</menu>]</menu>
 </menu>
 
 <menu>
-	<menu type="toolbar_">menu type="toolbar_"<menu>Toolbar
-		<menu>Menu
+	<menu type="toolbar_">[menu type="toolbar_"<menu>Toolbar
+		<menu>=
+		</menu>
+		<menu type="context_">!context<menu type="hole">Hole
+			<menu>=
+			</menu>
+			<menu>=
+			</menu>
+			<menu><a href="#url">a=href</a>
+			</menu>
+		</menu></menu>
+		<menu>=
+		</menu>end&nbsp;Toolbar
+	</menu>]</menu>
+</menu>
+
+<menu>
+	<menu type="toolbar_">[menu type="toolbar_"<menu>Toolbar
+		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
 		</menu>
-		<menu>[Menu]<a href="#url">[a=href]</a>
-		</menu>
-	</menu></menu>
+		<menu>=
+		</menu>end&nbsp;Toolbar
+	</menu>]</menu>
 </menu>
 
 
