@@ -23,8 +23,8 @@
 
 * {z-index:1;cursor:default;}/**/
 *:hover {z-index:1000;}
-menu[type]:hover>menu {visibility:visible;opacity:1;}
-/**:hover>* {z-index:1000;}*/
+/*menu[type]:hover>menu>menu {visibility:visible;opacity:1;}
+*:hover>* {z-index:1000;}*/
 
 section,header,article,footer,menu {display:block;}	/* html5 ... :/ ... */
 
@@ -44,14 +44,23 @@ section menu[type="toolbar__"]>menu>* {}	/* !display:table-cell;*/
 
 section menu[type^="context_"]{position:relative;}	/*  if {} then floats out up level ... TAB style ... */
 section menu[type^="context_"]>menu{position:absolute;}	/* ! */
+section menu[type^="context_"]>menu>*{position:relative;}	/* ! */
 
-section menu[type^="context_"]>menu{opacity:0;visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухани€...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
+section menu[type^="context_"]>menu{visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухани€...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
+section menu[type^="context_"]>menu>*{opacity:0;visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухани€...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
 
-section menu[class*="Right"] {left:100%;background-color:#ff00ff;}		/* float vector*/
-section menu[class*="Left"] {left:-100%;background-color:#ff00ff;}		/*float vector*/
-section menu[class*="Up"] {top:-100%;background-color:#ff00ff;}		/*float vector*/
-section menu[class*="Down"] {top:100%;background-color:#ff00ff;}		/*float vector*/
+/* float vectors */
+section menu[class*="Right"] {left:100%;top:0%;}
+section menu[class*="Left"] {left:0%;top:0%;}
+section menu[class*="Up"] {top:-50%;}
+section menu[class*="Down"] {top:100%;}
 
+section menu[class*="Right"]>* {left:0%;}/*margin-top:0%;*/
+section menu[class*="Left"]>* {left:-100%;}/*margin-top:0%;*/
+section menu[class*="Up"]>* {margin-top:-50%;}
+section menu[class*="Down"]>* {margin-top:0%;}
+
+/*section menu[class="Up"],section menu[class="Up"]>* {width:230px;height:150px;}*/
 
 /* section menu[type="context_"]>*>*{position:static;}  *//* ... забавный эффект [-hidden+opacity [!i!f] новый принцип ] ... перекрывает toolbar и a=href при +position:relative; ... [context>context!context>BUGfix] ... к–ќћ≈ Ё“ќго см. выше ...  */
 
@@ -61,7 +70,7 @@ section menu[class*="Down"] {top:100%;background-color:#ff00ff;}		/*float vector
 /* ... ƒќбавление   ѕ–≈ƒидуўўим действи€м следующего эффекта ... может повредить рассудок ... :/ ... */
 
 
-/*section menu[type="context_"]:hover>*{visibility:visible;opacity:1;}			z-index:1000;... fired hover ... */
+section menu[type^="context_"]:hover>menu>*{visibility:visible;opacity:1;}	/*		z-index:1000;... fired hover ... */
 /*section menu[type="toolbar_"]:hover>*{visibility:visible;opacity:1;}			z-index:1000;... fired hover ... */
 
 /*section menu[type="toolbar_"]>menu[type="context_"]>*{left:0%;top:100%;}		float vector*/
@@ -74,32 +83,6 @@ section menu[type="hole"] {}		/* ... */
 
 
 /* ... hover ... */
-section menu[type^="context_"]:hover {background-color:#ffffd0;}
-/*section menu[type="toolbar_"]>menu:hover {background-color:#ffffd0;}*/
-
-/* ... Hole Menu ... it is ... list? ... */
-section menu[type="hole"]:hover{background-color:#80ff80;color:#000000;}
-section menu[type^="context_"]>*>menu[type^="context_"]>menu:hover:not([type="hole"]){background-color:#ffff80;color:#000000;} /**/
-
-/* ... min ... */
-section menu,section a {
-	min-width:100px;
-	min-height:20px;
-	border:none;/* double */
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-/* ... min visibility ... */
-section menu {
-	background-color:#80d080;
-	color:#000000;
-	box-shadow:0px 0px 5px #000000;
-	-ms-box-shadow:0px 0px 5px #000000;
-	-moz-box-shadow:0px 0px 5px #000000;
-	-webkit-box-shadow:0px 0px 5px #000000;
-}
 
 
 
@@ -110,7 +93,7 @@ section *{margin:0;padding:0;}
 section>*{}
 
 section *{color:#ffffff;font-size:12px;font-weight:900;font-family:Verdana,Arial,Tahoma,Courier;}
-section *{text-align:center;}
+section *{text-align:left;}
 
 header,section i {border: 2px #000000 solid;}
 
@@ -131,21 +114,46 @@ section a:hover		{border:none;background:#d0ffd0;color:#000000;}
 section a:active	{border:none;background:#ffffff;color: #000000;}
 
 
-section menu[class="Down"] {background-color:#60a060;color:#ffffff;}
-
-/*Opera BUGfix :hover transitions ... */
-section menu[type^="context_"]:hover>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
-section menu[type^="context_"]>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
-
-section menu[type^="context_"]>menu{
-	background-color:#408040;
-	color:#ffffd0;
+/* ... min ... */
+section menu,section a {
+	min-width:128px;
+	min-height:1.7em;
+	border:none;/* double */
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
-section menu[type^="context_"]>*{
+
+/* ... min visibility ... */
+section menu {
+	background-color:#80d080;
+	color:#000000;
+	box-shadow:0px 0px 5px #000000;
+	-ms-box-shadow:0px 0px 5px #000000;
+	-moz-box-shadow:0px 0px 5px #000000;
+	-webkit-box-shadow:0px 0px 5px #000000;
+}
+
+section menu[type^="context_"]>*>*{
 	-ms-transition-duration:0.5s;
 	-moz-transition-duration:0.5s;
 	-webkit-transition-duration:0.5s;
 }
+
+section menu[type^="context_"] {background-color:#90e0a0;color:#000000;}
+section menu[type^="context_"]:hover {background-color:#ffffd0;}
+
+section menu[type="toolbar_"] {background-color:#60a060;color:#ffffff;}
+/*section menu[type="toolbar_"]>menu>menu:hover {background-color:#ffffd0;}*/
+
+/*Opera BUGfix :hover transitions ... */
+section menu[type^="context_"]:hover>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
+section menu[type^="context_"]>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
+
+
+/* ... Hole Menu ... it is ... list? ... */
+section menu[type="hole"]:hover{background-color:#80ff80;color:#000000;}
+section menu[type^="context_"]>*>menu[type^="context_"]>menu:hover:not([type="hole"]){background-color:#ffff80;color:#000000;} /**/
 
 /*... тормозит ...и вызывает баг overflow ... если нет сложных меню ...*/
 section menu[type="toolbar_"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), to(transparent));}
@@ -242,36 +250,47 @@ box-shadow:0 0 24px #000000;
 
 <menu type="toolbar_">[menu type="toolbar_"
 <menu>
-<menu type="context_">[menu&nbsp;type="context_d"<menu class="Down">Toolbar
-	<menu>Menu
+<menu type="context_">[<i>Down</i><menu class="Down">
+	<menu>=
 	</menu>
 	<menu><a href="#url">a=href</a>
 	</menu>
-	<menu>[Menu]<a href="#url">[a=href]</a>
-	</menu>
-	<menu type="context_">[menu&nbsp;type="context_"<menu>Context
+	<menu type="context_">[<i>Right</i><menu class="Right"><menu>
+		Context==========Right<br /><i></i><br /><br /><i></i><br /><br /><i></i><br />&nbsp;
 		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
 		</menu>
-		<menu type="context_">[menu&nbsp;type="context_"<menu>next&nbsp;Context
+		<menu type="context_">[<i>Right</i><menu class="Right">
 			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context_">[menu&nbsp;type="context_"<menu type="hole">hole&nbsp;Context
+			<menu type="context_">[<i>to</i><br /><i>Right</i><menu type="hole" class="Right">
 				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
 				</menu>
 				<menu type="hole">hole
-				</menu>end&nbsp;hole&nbsp;Context
-			</menu>]</menu>end&nbsp;next&nbsp;Context
+				</menu>
+			</menu>]</menu>
 		</menu>]</menu>
 		<menu>=
-		</menu>end&nbsp;Context
-	</menu>]</menu>
-	<menu type="context_">[menu type=toolbar<menu class="Down">Toolbar
+		</menu>
+	</menu></menu>]</menu>
+	<menu type="context_">[<i>Left </i><menu class="Left"><menu>
+		Context==========Left<br /><i></i><br /><br /><i></i><br /><br /><i></i><br />&nbsp;
+	</menu></menu>]</menu>
+	<menu type="context_">[<i> Up </i><menu class="Up"><menu>
+		Context==========Up<br /><br /><i></i><br /><br /><i></i><br />&nbsp;
+	</menu></menu>]</menu>
+	<menu type="context_">[<i> UpLeft </i><menu class="UpLeft"><menu>
+		Context==========UpLeft<br /><i></i><br /><br /><i></i><br /><br /><i></i><br /><br /><i></i><br /><br /><i></i><br />&nbsp;
+	</menu></menu>]</menu>
+	<menu type="context_">[<i>Down</i><menu class="Down"><menu>
+		Context==========Down<br /><i></i><br /><br /><i></i><br /><br /><i></i><br />&nbsp;
+	</menu></menu>]</menu>
+	<menu type="context_">[menu type=toolbar<menu class="Down"><menu>Toolbar
 		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
@@ -284,7 +303,7 @@ box-shadow:0 0 24px #000000;
 			<menu>&nbsp;
 			</menu>end&nbsp;Context
 		</menu>]</menu>end&nbsp;Toolbar
-	</menu>]</menu>
+	</menu></menu>]</menu>
 	<menu type="context_">context&gt;toolbar
 		<menu type="context_">type=toolbar<menu class="Down">Toolbar
 			<menu>=
@@ -429,26 +448,25 @@ box-shadow:0 0 24px #000000;
 		<br />
 		end BUGfix_
 	</menu></menu>
-	end Toolbar
 </menu>]</menu>
 </menu>
 
 <menu>
-	<menu type="context_">[menu type="context_d"<menu class="Down">Toolbar
+	<menu type="context_">[menu type="context_d"<menu class="Down">
 		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
 		</menu>
 		<menu>=
-		</menu>end&nbsp;Toolbar
+		</menu>
 	</menu>]</menu>
 </menu>
 
 <menu>
-	<menu type="context_">[menu type="context_d"<menu class="Down">Toolbar
+	<menu type="context_">[menu type="context_d"<menu class="Down">
 		<menu>=
 		</menu>
-		<menu type="context_">!context<menu type="hole">Hole
+		<menu type="context_">!context<menu type="hole">
 			<menu>=
 			</menu>
 			<menu>=
@@ -457,23 +475,22 @@ box-shadow:0 0 24px #000000;
 			</menu>
 		</menu></menu>
 		<menu>=
-		</menu>end&nbsp;Toolbar
+		</menu>
 	</menu>]</menu>
 </menu>
 
 <menu>
-	<menu type="context_">[menu type="context_d"<menu class="Down">Toolbar
+	<menu type="context_">[menu type="context_d"<menu class="Down">
 		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
 		</menu>
 		<menu>=
-		</menu>end&nbsp;Toolbar
+		</menu>
 	</menu>]</menu>
 </menu>
 
-
-end menu type="toolbar_"
+<!--end menu type="toolbar_"-->
 </menu>
 
 <!--menu type="context_d">type=toolbar
