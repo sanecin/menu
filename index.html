@@ -23,6 +23,8 @@
 
 * {z-index:1;cursor:default;}/**/
 *:hover {z-index:1000;}
+menu[type]:hover>menu {visibility:visible;opacity:1;}
+/**:hover>* {z-index:1000;}*/
 
 section,header,article,footer,menu {display:block;}	/* html5 ... :/ ... */
 
@@ -34,20 +36,22 @@ section menu {border:none;}	/* ... +position:relative; ... так , может , было бы
 
 article>menu[type="toolbar_"]{}	/*display:table-cell;position:relative; ->*/
 section menu[type="toolbar_"]>menu{position:absolute; }		/*visibility:hidden; float vector*/
-section menu[type="toolbar_"]>menu{left:0%;top:100%;background-color:#00ff00; }		/*opacity:0;background-color:transparent; float vector*/
+section menu[type="toolbar_"]>menu{left:0%;top:100%;opacity:0;background-color:#00ff00; }		/*opacity:0;background-color:transparent; float vector*/
 section menu[type="toolbar_"]>menu>* {}	/* !display:table-cell;*/
 
 section menu[type="context_"]{position:relative;}	/* ! */
 section menu[type="context_"]>menu{position:absolute;visibility:hidden;}	/*-opacity:без затухани€...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
-section menu[type="context_"]>menu{left:100%;top:0%;opacity:0;background-color:transparent;}		/*float vector*/
+section menu[type="context_"]>menu{left:100%;top:0%;opacity:0;background-color:#ff00ff;}		/*transparent float vector*/
 /* section menu[type="context_"]>*>*{position:static;}  *//* ... забавный эффект [-hidden+opacity [!i!f] новый принцип ] ... перекрывает toolbar и a=href при +position:relative; ... [context>context!context>BUGfix] ... к–ќћ≈ Ё“ќго см. выше ...  */
+
 
 /* ... от см.выше ... */
 /* ... если ѕ≈–≈клёчить hidden » opacity ... так-же ¬ лёчить z-index  » +position:relative; ... можно при некотором блуждании по экрану наблюдать эффект зат¬ора (видно только в ’роме ... интересный эффект )... :/ */ 
 /* ... ƒќбавление   ѕ–≈ƒидуўўим действи€м следующего эффекта ... может повредить рассудок ... :/ ... */
 
 
-section menu[type="context_"]:hover>*{visibility:visible;opacity:1;}			/*z-index:1000;... fired hover ... */
+/*section menu[type="context_"]:hover>*{visibility:visible;opacity:1;}			z-index:1000;... fired hover ... */
+/*section menu[type="toolbar_"]:hover>*{visibility:visible;opacity:1;}			z-index:1000;... fired hover ... */
 
 /*section menu[type="toolbar_"]>menu[type="context_"]>*{left:0%;top:100%;}		float vector*/
 
@@ -286,13 +290,13 @@ box-shadow:0 0 24px #000000;
 			</menu></menu>
 		</menu></menu>
 	</menu>
-	<menu type="toolbar_">toolbar&gt;&gt;toolbar<menu>Toolbar
-		<menu type="toolbar_">type=toolbar<menu>Toolbar
+	<menu type="toolbar_">toolbar&gt;&gt;toolbar
+		<menu type="toolbar_">[type=toolbar]<menu>[Toolbar]
 			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context_">=context<menu>
+			<menu type="context_">[=context]<menu>
 				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
@@ -307,8 +311,8 @@ box-shadow:0 0 24px #000000;
 				</menu>
 			</menu></menu>
 		</menu></menu>
-		<menu type="toolbar_">type=toolbar_<menu>Toolbar
-			<menu type="context_">=context<menu>
+		<menu type="toolbar_">[type=toolbar_]<menu>[Toolbar_]
+			<menu type="context_">[=context_]<menu>
 				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
@@ -324,9 +328,9 @@ box-shadow:0 0 24px #000000;
 
 		<br /><br />
 
-	</menu></menu>
+	</menu>
 
-	<menu type="context_">BUGfix<menu><i>overflow BUGfix</i>
+	<menu type="context_">BUGfix<menu>===<i>overflow&nbsp;BUGfix</i>===
 		<br />
 		<br />
 		<menu type="toolbar_"><menu>!toolbar
