@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="windows-1251" ?>
-<!-- //[¤[TeRmiNuS_]@[_Menu_Tag_index.html]¤¤¤ ...
+<!-- //[¤[TeRmiNuS_]@[_Menu_Tag_Safary_context_entry_index.html]¤¤¤ ...
 //... прототип Menu Tag ... :/ ...
 //  -->
 <!-- http://www.gnu.org/philosophy/pragmatic.ru.html -->
@@ -32,22 +32,24 @@ section,header,article,footer,menu {display:block;}	/* html5 ... :/ ... */
 
 section menu {border:none;}	/* ... +position:relative; ... так , может , было бы правильно ... но не так весело ... :/ ... */
 
-article>menu[type="toolbar"]{display:table-cell;}	/* ->*/
-section menu[type="toolbar"]>* {display:table-cell;position:relative;}	/* ! */
+article>menu[type="toolbar_"]{}	/*display:table-cell;position:relative; ->*/
+section menu[type="toolbar_"]>menu{position:absolute; }		/*visibility:hidden; float vector*/
+section menu[type="toolbar_"]>menu{left:0%;top:100%;background-color:#00ff00; }		/*opacity:0;background-color:transparent; float vector*/
+section menu[type="toolbar_"]>menu>* {}	/* !display:table-cell;*/
 
-section menu[type="context"]{position:relative;}	/* ! */
-section menu[type="context"]>menu{position:absolute;visibility:hidden;}	/*-opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
+section menu[type="context_"]{position:relative;}	/* ! */
+section menu[type="context_"]>menu{position:absolute;visibility:hidden;}	/*-opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
+section menu[type="context_"]>menu{left:100%;top:0%;opacity:0;background-color:transparent;}		/*float vector*/
+/* section menu[type="context_"]>*>*{position:static;}  *//* ... забавный эффект [-hidden+opacity [!i!f] новый принцип ] ... перекрывает toolbar и a=href при +position:relative; ... [context>context!context>BUGfix] ... кРОМЕ ЭТОго см. выше ...  */
 
 /* ... от см.выше ... */
 /* ... если ПЕРЕклЮчить hidden И opacity ... так-же ВКлЮчить z-index  И +position:relative; ... можно при некотором блуждании по экрану наблюдать эффект затВора (видно только в Хроме ... интересный эффект )... :/ */ 
 /* ... ДОбавление К ПРЕДидуЩЩим действиям следующего эффекта ... может повредить рассудок ... :/ ... */
 
-/* section menu[type="context"]>*>*{position:static;}  *//* ... забавный эффект [-hidden+opacity [!i!f] новый принцип ] ... перекрывает toolbar и a=href при +position:relative; ... [context>context!context>BUGfix] ... кРОМЕ ЭТОго см. выше ...  */
 
-section menu[type="context"]:hover>*{visibility:visible;opacity:1;}			/*z-index:1000;... fired hover ... */
+section menu[type="context_"]:hover>*{visibility:visible;opacity:1;}			/*z-index:1000;... fired hover ... */
 
-section menu[type="context"]>menu{left:100%;top:0%;opacity:0;background-color:transparent;}		/*float vector*/
-section menu[type="toolbar"]>menu[type="context"]>*{left:0%;top:100%;}		/*float vector*/
+/*section menu[type="toolbar_"]>menu[type="context_"]>*{left:0%;top:100%;}		float vector*/
 
 section menu[type="list"] {}		/*... futured ... */
 
@@ -59,12 +61,12 @@ section menu[type="hole"] {}		/* ... */
 
 
 /* ... hover ... */
-section menu[type="context"]:hover {background-color:#ffffd0;}
-/*section menu[type="toolbar"]>menu:hover {background-color:#ffffd0;}*/
+section menu[type="context_"]:hover {background-color:#ffffd0;}
+/*section menu[type="toolbar_"]>menu:hover {background-color:#ffffd0;}*/
 
 /* ... Hole Menu ... it is ... list? ... */
 section menu[type="hole"]:hover{background-color:#80ff80;color:#000000;}
-section menu[type="context"]>*>menu[type="context"]>menu:hover:not([type="hole"]){background-color:#ffff80;color:#000000;} /**/
+section menu[type="context_"]>*>menu[type="context_"]>menu:hover:not([type="hole"]){background-color:#ffff80;color:#000000;} /**/
 
 /* ... min ... */
 section menu,section a {
@@ -101,6 +103,8 @@ header,section i {border: 2px #000000 solid;}
 
 section,header,article,section i {border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;}
 
+article{position:relative;}
+
 header{background:#80c0c0;margin-bottom:20px;padding:10px;}
 
 section i {padding:2px 10px;background:#80b0b0;color:#000000;font:10px bold;font-family:Verdana;}
@@ -114,24 +118,24 @@ section a:hover		{border:none;background:#d0ffd0;color:#000000;}
 section a:active	{border:none;background:#ffffff;color: #000000;}
 
 
-section menu[type="toolbar"] {background-color:#60a060;color:#ffffff;}
+section menu[type="toolbar_"] {background-color:#60a0ff;color:#ffffff;}
 
 /*Opera BUGfix :hover transitions ... */
-section menu[type="context"]:hover>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
-section menu[type="context"]>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
+section menu[type="context_"]:hover>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
+section menu[type="context_"]>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
 
-section menu[type="context"]>menu{
+section menu[type="context_"]>menu{
 	background-color:#408040;
 	color:#ffffd0;
 }
-section menu[type="context"]>*{
+section menu[type="context_"]>*{
 	-ms-transition-duration:0.5s;
 	-moz-transition-duration:0.5s;
 	-webkit-transition-duration:0.5s;
 }
 
 /*... тормозит ...и вызывает баг overflow ... если нет сложных меню ...*/
-section menu[type="toolbar"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), to(transparent));}
+section menu[type="toolbar_"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), to(transparent));}
 
 
 /*] ¤][¤¤] */
@@ -216,26 +220,25 @@ box-shadow:0 0 24px #000000;
 
 <section>
 	<header>
-		<h1> Menu TAG <i> НЕ подДЕРЖиваЕтСЯ </i>&nbsp;
-			<i> toolbar:table-cell,context:relative>absolute;:hidden;>inherit?;left:100%;top:0%; </i></h1>
+		<h1> Menu TAG <i> _Menu_Tag_Safary_context_entry_index.html </i></h1>
 	</header>
 
 <article>
 
 &nbsp;
 
-<menu type="toolbar">type=toolbar
-	<menu type="context">toolbar&gt;context<menu>
+<menu type="toolbar_"><menu>type=toolbar
+	<menu type="context_">toolbar&gt;context<menu>
 		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
 		</menu>
-		<menu type="context">context&gt;context<menu>Context
+		<menu type="context_">context&gt;context<menu>Context
 			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context">!context<menu type="hole">Context
+			<menu type="context_">!context<menu type="hole">Context
 				<menu>&nbsp;
 				</menu>
 				<menu><a href="#url">a=href</a>
@@ -246,13 +249,13 @@ box-shadow:0 0 24px #000000;
 			<menu>
 			</menu>
 		</menu></menu>
-		<menu type="context">context&gt;toolbar
-			<menu type="toolbar">Toolbar
+		<menu type="context_">context&gt;toolbar
+			<menu type="toolbar_"><menu>Toolbar
 				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
 				</menu>
-				<menu type="context">=context<menu>comtext
+				<menu type="context_">=context<menu>comtext
 					<menu>=
 					</menu>
 					<menu><a href="#url">a=href</a>
@@ -260,16 +263,16 @@ box-shadow:0 0 24px #000000;
 					<menu>&nbsp;
 					</menu>
 				</menu></menu>
-			</menu>
+			</menu></menu>
 		</menu>
 	</menu></menu>
-	<menu type="context">toolbar&gt;toolbar<menu>
-		<menu type="toolbar">Toolbar
+	<menu type="context_">toolbar&gt;toolbar<menu>
+		<menu type="toolbar_"><menu>Toolbar
 			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context">=context<menu>
+			<menu type="context_">=context<menu>
 				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
@@ -283,13 +286,13 @@ box-shadow:0 0 24px #000000;
 				<menu>&nbsp;
 				</menu>
 			</menu></menu>
-		</menu><br />
-		<menu type="toolbar">Toolbar
+		</menu></menu><br />
+		<menu type="toolbar_"><menu>Toolbar
 			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context">=context<menu>
+			<menu type="context_">=context<menu>
 				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
@@ -297,81 +300,81 @@ box-shadow:0 0 24px #000000;
 				<menu>&nbsp;
 				</menu>
 			</menu></menu>
-		</menu>
+		</menu></menu>
 
 		<br /><br />
 
 	</menu></menu>
 
-			<menu type="context">BUGfix<menu><i>overflow BUGfix</i>
+			<menu type="context_">BUGfix<menu><i>overflow BUGfix</i>
 				<br />
 				<br />
-				<menu type="toolbar">!toolbar
-					<menu type="context">?toolbar<menu>
-						<menu type="toolbar">
-							<menu type="context">?toolbar<br />&nbsp;<br />&nbsp;<menu>
-								<menu type="toolbar">
-									<menu type="context">?toolbar<br />&nbsp;<br />&nbsp;<menu>
-										<menu type="toolbar">
-											<menu type="context">?toolbar<br />&nbsp;<br />&nbsp;<menu>
-												<menu type="toolbar">
+				<menu type="toolbar_"><menu>!toolbar
+					<menu type="context_">?toolbar<menu>
+						<menu type="toolbar_"><menu>
+							<menu type="context_">?toolbar<br />&nbsp;<br />&nbsp;<menu>
+								<menu type="toolbar_"><menu>
+									<menu type="context_">?toolbar<br />&nbsp;<br />&nbsp;<menu>
+										<menu type="toolbar_"><menu>
+											<menu type="context_">?toolbar<br />&nbsp;<br />&nbsp;<menu>
+												<menu type="toolbar_"><menu>
 													<menu>-toolbar<br />&nbsp;<br />&nbsp;
 													</menu>
 													<menu>
 													</menu>
 													<menu>
 													</menu>
-												</menu>
+												</menu></menu>
 											</menu></menu>
 											<menu>
 											</menu>
 											<menu>
 											</menu>
-										</menu>
+										</menu></menu>
 									</menu></menu>
 									<menu>
 									</menu>
 									<menu>
 									</menu>
-								</menu>
+								</menu></menu>
 							</menu></menu>
 							<menu>
 							</menu>
 							<menu>
 							</menu>
-						</menu>
+						</menu></menu>
 					</menu></menu>
-						<menu type="context">!context<menu type="hole">
+						<menu type="context_">!context<menu type="hole">
 							<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 							<menu>overflow
 							</menu>
 						</menu></menu>
-						<menu type="context">?context<menu>
+						<menu type="context_">?context<menu>
 							<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 							<menu>overflow
 							</menu>
 						</menu></menu>
-				</menu>
+				</menu></menu>
 				<br />
 				<br />
-				<menu type="toolbar">overflow BUGfix
+				<menu type="toolbar_"><menu>overflow BUGfix
 					<menu type="hole">=hole
 					</menu>
-					<menu type="context">=context<menu><menu type="hole">
+					<menu type="context_">=context<menu><menu type="hole">
 						EMPTY type=context
 					</menu></menu></menu>
-					<menu type="context">?context<menu>
+					<menu type="context_">?context<menu>
 						<br /><br /><br /><br /><br /><br /><br /><br />
 						<menu>overflow
 						</menu>
 					</menu></menu>
-				</menu>
+				</menu></menu>
 				<br />
 				<br />
-				<menu type="toolbar">+toolbar
+				<menu type="toolbar_"><menu>+toolbar
 					<menu>=
 					</menu>
-					<menu type="context">!context<menu type="hole">Hole
+					<menu type="context_">!context<menu type="hole">Hole
 						<menu>=
 						</menu>
 						<menu>=
@@ -379,11 +382,11 @@ box-shadow:0 0 24px #000000;
 						<menu><a href="#url">a=href</a>
 						</menu>
 					</menu></menu>
-					<menu type="context">=context<menu type="hole">
+					<menu type="context_">=context<menu type="hole">
 						EMPTY type=context
 					</menu></menu>
 					<br />
-				</menu>
+				</menu></menu>
 				<br />
 				<br />
 				<menu type="hole"><a href="#url">a=href</a>
@@ -391,27 +394,27 @@ box-shadow:0 0 24px #000000;
 				<br />
 				<br />
 			</menu></menu>
-</menu>
-&nbsp;
+</menu></menu>
+&nbsp;<br />&nbsp;<br />&nbsp;<br />
 
-<menu type="toolbar">type=toolbar
+<!--menu type="toolbar_">type=toolbar
 	<menu>menu
 	</menu>
 	<menu type="hole">type=hole
 	</menu>
-	<menu type="context">type=context
+	<menu type="context_">type=context
 	</menu>
-	<menu type="context">toolbar&gt;context<menu>
+	<menu type="context_">toolbar&gt;context<menu>
 		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
 		</menu>
-		<menu type="context">context&gt;context<menu>Context
+		<menu type="context_">context&gt;context<menu>Context
 			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context">!context<menu type="hole">Context
+			<menu type="context_">!context<menu type="hole">Context
 				<menu>&nbsp;
 				</menu>
 				<menu><a href="#url">a=href</a>
@@ -422,13 +425,13 @@ box-shadow:0 0 24px #000000;
 			<menu>
 			</menu>
 		</menu></menu>
-		<menu type="context">context&gt;toolbar<menu>
-			<menu type="toolbar">Toolbar
+		<menu type="context_">context&gt;toolbar<menu>
+			<menu type="toolbar_">Toolbar
 				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
 				</menu>
-				<menu type="context">=context<menu>comtext
+				<menu type="context_">=context<menu>comtext
 					<menu>=
 					</menu>
 					<menu><a href="#url">a=href</a>
@@ -438,9 +441,9 @@ box-shadow:0 0 24px #000000;
 				</menu></menu>
 			</menu>
 		</menu></menu>
-		<menu type="context">Hole<menu>+context hole<br /><br />
-			<menu type="toolbar">ToolBar
-				<menu type="context">=hole<menu>=hole
+		<menu type="context_">Hole<menu>+context hole<br /><br />
+			<menu type="toolbar_">ToolBar
+				<menu type="context_">=hole<menu>=hole
 					<menu>=
 					</menu>
 					<menu><a href="#url">a=href</a>
@@ -448,7 +451,7 @@ box-shadow:0 0 24px #000000;
 					<menu>=
 					</menu>context<br /><br /><br />context
 				</menu></menu>
-				<menu type="context">!hole<menu type="hole">type=hole
+				<menu type="context_">!hole<menu type="hole">type=hole
 					<menu>=
 					</menu>
 					<menu><a href="#url">a=href</a>
@@ -456,11 +459,11 @@ box-shadow:0 0 24px #000000;
 					<menu>=
 					</menu><br /><br /><br />fired context
 				</menu></menu>
-				<menu type="context">!toolbar<menu type="hole">fired ToolBar  type=hole
-					<menu type="toolbar">
+				<menu type="context_">!toolbar<menu type="hole">fired ToolBar  type=hole
+					<menu type="toolbar_">
 						<menu>=
 						</menu>
-						<menu type="context">=context<menu>
+						<menu type="context_">=context<menu>
 							<menu>=
 							</menu>
 							<menu><a href="#url">a=href</a>
@@ -470,26 +473,26 @@ box-shadow:0 0 24px #000000;
 						</menu></menu>
 					</menu><br /><br /><br /><br /><br />+fired context hole
 				</menu></menu>
-				<menu type="context">?context<menu type="hole">hole
+				<menu type="context_">?context<menu type="hole">hole
 					<menu>menu
 					</menu>hole
 					<menu type="hole">type=hole
 					</menu>hole
 					<menu><a href="#url">a=href</a>
 					</menu>hole
-					<menu type="context">context
+					<menu type="context_">context
 					</menu>hole
 					<menu type="context hole"><menu>
 					</menu></menu>hole
 				</menu></menu>
 			</menu><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />+context hole<br />
 		</menu></menu>
-		<menu type="context">!context<menu>develop
+		<menu type="context_">!context<menu>develop
 			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context">?toolbar
+			<menu type="context_">?toolbar
 				<menu type="hole"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />============overlock menu<br />
 					<menu>=
 					</menu>
@@ -498,10 +501,10 @@ box-shadow:0 0 24px #000000;
 					<menu>=
 					</menu>
 				</menu>
-				<menu type="toolbar">toolbar
+				<menu type="toolbar_">toolbar
 					<menu>=
 					</menu>
-					<menu type="context">context&gt;hole<menu type="hole">Hole
+					<menu type="context_">context&gt;hole<menu type="hole">Hole
 						<menu>=
 						</menu>
 						<menu>=
@@ -513,9 +516,9 @@ box-shadow:0 0 24px #000000;
 					</menu>
 				</menu>
 			</menu>
-											<menu type="context">*toolbar<br />&nbsp;<br />&nbsp;
+											<menu type="context_">*toolbar<br />&nbsp;<br />&nbsp;
 						<menu>
-												<menu type="toolbar">
+												<menu type="toolbar_">
 													<menu>*toolbar<br />&nbsp;<br />&nbsp;
 													</menu>
 													<menu>*toolbar<br />&nbsp;<br />&nbsp;
@@ -523,29 +526,29 @@ box-shadow:0 0 24px #000000;
 													<menu>*toolbar<br />&nbsp;<br />&nbsp;
 													</menu>
 												</menu>
-												<menu type="toolbar">&nbsp;
-													<menu type="context">
-														<menu type="toolbar">
+												<menu type="toolbar_">&nbsp;
+													<menu type="context_">
+														<menu type="toolbar_">
 															<menu>!toolbar<br />&nbsp;<br />&nbsp;
 															</menu>
 															<menu>!toolbar<br />&nbsp;<br />&nbsp;
 															</menu>
 														</menu>
 													</menu>
-													<menu type="context">/toolbar<br />&nbsp;<br />&nbsp;
+													<menu type="context_">/toolbar<br />&nbsp;<br />&nbsp;
 													</menu>
-													<menu type="context">/toolbar<br />&nbsp;<br />&nbsp;
-													</menu>
-												</menu>
-												<menu type="toolbar">
-													<menu>*toolbar<br />&nbsp;<br />&nbsp;
-													</menu>
-													<menu>*toolbar<br />&nbsp;<br />&nbsp;
-													</menu>
-													<menu>*toolbar<br />&nbsp;<br />&nbsp;
+													<menu type="context_">/toolbar<br />&nbsp;<br />&nbsp;
 													</menu>
 												</menu>
-												<menu type="toolbar">
+												<menu type="toolbar_">
+													<menu>*toolbar<br />&nbsp;<br />&nbsp;
+													</menu>
+													<menu>*toolbar<br />&nbsp;<br />&nbsp;
+													</menu>
+													<menu>*toolbar<br />&nbsp;<br />&nbsp;
+													</menu>
+												</menu>
+												<menu type="toolbar_">
 													<menu>*toolbar<br />&nbsp;<br />&nbsp;
 													</menu>
 													<menu>*toolbar<br />&nbsp;<br />&nbsp;
@@ -554,13 +557,13 @@ box-shadow:0 0 24px #000000;
 													</menu>
 												</menu>
 						</menu>
-												<menu><menu type="toolbar">
-											<menu type="context">?toolbar<br />&nbsp;<br />&nbsp;
-												<menu type="toolbar">
-											<menu type="context">?toolbar<br />&nbsp;<br />&nbsp;
-												<menu type="toolbar">
-											<menu type="context">?toolbar<br />&nbsp;<br />&nbsp;
-												<menu type="toolbar">
+												<menu><menu type="toolbar_">
+											<menu type="context_">?toolbar<br />&nbsp;<br />&nbsp;
+												<menu type="toolbar_">
+											<menu type="context_">?toolbar<br />&nbsp;<br />&nbsp;
+												<menu type="toolbar_">
+											<menu type="context_">?toolbar<br />&nbsp;<br />&nbsp;
+												<menu type="toolbar_">
 													<menu>-toolbar<br />&nbsp;<br />&nbsp;
 													</menu>
 													<menu>-toolbar<br />&nbsp;<br />&nbsp;
@@ -569,38 +572,38 @@ box-shadow:0 0 24px #000000;
 													</menu>
 												</menu>
 											</menu>
-													<menu type="context">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
+													<menu type="context_">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
 													</menu>
-													<menu type="context">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
-													</menu>
-												</menu>
-											</menu>
-													<menu type="context">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
-													</menu>
-													<menu type="context">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
+													<menu type="context_">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
 													</menu>
 												</menu>
 											</menu>
-													<menu type="context">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
+													<menu type="context_">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
 													</menu>
-													<menu type="context">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
+													<menu type="context_">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
+													</menu>
+												</menu>
+											</menu>
+													<menu type="context_">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
+													</menu>
+													<menu type="context_">context?<menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu><menu>context?<br />&nbsp;<br />&nbsp;</menu></menu>
 													</menu>
 												</menu>
 											</menu></menu>
-			<menu type="context">HTML5_logo
+			<menu type="context_">HTML5_logo
 				<menu class="HTML5_logo_"><div><div></div></div></menu>
 			</menu>
 		</menu></menu>
 	</menu></menu>
 	<menu><a href="#url">a=href</a>
 	</menu>
-	<menu type="context">toolbar&gt;toolbar
-		<menu type="toolbar">Toolbar
+	<menu type="context_">toolbar&gt;toolbar
+		<menu type="toolbar_">Toolbar
 			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context">=context<menu>
+			<menu type="context_">=context<menu>
 				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
@@ -610,7 +613,7 @@ box-shadow:0 0 24px #000000;
 			</menu></menu>
 		</menu>
 	</menu>
-</menu>
+</menu-->
 
 </article>
 
