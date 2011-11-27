@@ -36,7 +36,7 @@ section menu[type="toolbar_"]>menu{display:table-cell;}
 
 section menu[type^="context_"]{position:relative;}	/*  if {} then floats out up level ... TAB style ... */
 section menu[type^="context_"]>menu{position:absolute;}	/* ! */
-section menu[type^="context_"]>menu>*{position:relative;}	/* ! */
+section menu[type^="context_"]>menu>*{position:relative;}	/* ! for udefined floats */
 
 section menu[type^="context_"]>menu{visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
 section menu[type^="context_"]>menu>*{opacity:0;visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
@@ -251,6 +251,8 @@ box-shadow:0 0 24px #000000;
 			</menu>
 		</menu></menu>
 		<menu type="toolbar_">Toolbar
+			<menu>==
+			</menu>
 			<menu>
 				<menu type="context_">Context<menu class="Down">
 					<menu>=
@@ -266,8 +268,6 @@ box-shadow:0 0 24px #000000;
 					<menu>=
 					</menu>
 				</menu></menu>
-			</menu>
-			<menu>=
 			</menu>&nbsp;
 		</menu>
 	</menu></menu>
@@ -376,6 +376,33 @@ box-shadow:0 0 24px #000000;
 <menu>
 <menu type="context_"><i>Cross Types</i><menu class="Down">
 	<menu type="context_">context&gt;context<menu type="context_" class="Right">
+			<menu>text1
+				<menu>text2
+				</menu>
+			</menu>
+			<menu type="context_">text3
+				<menu>text4
+				</menu>
+			</menu>
+			<menu type="context_">text5
+				<menu>text6
+					<menu>text7
+					</menu>
+				</menu>
+			</menu>
+			<menu><a href="#url">a=href</a>
+			</menu>
+			<menu><menu type="context_">type=context<menu class="Right">unvisible Text ...
+				<menu>=
+				</menu>
+				<menu><a href="#url">a=href</a>
+				</menu>
+				<menu>&nbsp;
+				</menu>
+			</menu></menu></menu>
+			&nbsp;
+	</menu></menu>
+	<menu type="context_">context&gt;&gt;context<menu type="context_" class="Right">
 		<menu  type="toolbar_" class="Right">Toolbar
 			<menu>=
 			</menu>
