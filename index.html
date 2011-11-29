@@ -76,6 +76,16 @@ menu[type^="doc_"]:hover>menu{visibility:visible;opacity:1;}	/*z-index:1000; ...
 menu[type^="doc_"] .intro{background-color:#909040;}
 menu[type^="doc_"]>menu:not(.intro) {}
 
+/* ][type^="tab_" ... */
+
+menu[type^="tab_"],menu[type^="tab_"] menu{background-color:#60b0b0;color:#ffffff;text-shadow: 2px 2px 5px #000000;}	/* ! */
+menu[type^="tab_"]:hover{background-color:#70d0d0;}
+menu[type^="tab_"]>menu{position:absolute;left:0%;top:100%;opacity:0;visibility:hidden;}
+menu[type^="tab_"]:hover>menu{visibility:visible;opacity:1;}	/*z-index:1000; ... */
+menu[type^="tab_"] .intro{background-color:#409090;}
+menu[type^="tab_"]>menu:not(.intro) {}
+menu[type^="tab_"]>menu>menu{display:table-cell;}
+
 /* ][type^="hole" ... */
 menu[type="hole"]:hover{background-color:#80ff80;color:#000000;}
 menu[type^="context_"]>*>menu[type^="context_"]>menu:hover:not([type="hole"]){background-color:#ffff80;color:#000000;} /**/
@@ -368,9 +378,8 @@ box-shadow:0 0 24px #000000;
 	</menu></menu></menu>
 <!-- ==================================-->
 <!-- ==================================-->
-<menu>=
 	<menu type="doc_"><i>Doc</i>
-		<menu class="intro">intro_class<br />_______________________________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
+		<menu class="intro">intro_class<br />___________________________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
 		</menu>
 		<menu>&nbsp;<i>&nbsp;HoverDoc&nbsp;</i>
 				<br />______________<br />&nbsp;
@@ -389,7 +398,7 @@ box-shadow:0 0 24px #000000;
 					</menu>
 			</menu>
 
-			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;doc 
+			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;doc_ 
 					<menu>Doc<br />____________________________<br /><br />&lt;menu type="doc_"&gt;[LABEL]<br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br />&nbsp;<br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&nbsp;<br />
 					</menu>
 			</menu>
@@ -418,7 +427,36 @@ box-shadow:0 0 24px #000000;
 		</menu>
 
 	</menu>
-</menu>
+
+<!-- ==================================-->
+	<menu type="tab_"><i>Tab</i>
+		<menu class="intro">intro_class<br />_____________________________________________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
+		</menu>
+		<menu><i>&nbsp;HoverTab&nbsp;</i><br />
+			_____________________________________________________________<br />&nbsp;
+			<menu><menu type="tab_"><i>menu&nbsp;</i>&nbsp;= 
+					<menu>Menu<br />_____________________________________________________________<br /><br /><br /><menu>&nbsp;&lt;menu [type="menuType"]&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu>&nbsp;<br />&nbsp;<br />
+					</menu>
+			</menu></menu>
+
+			<menu><menu type="tab_"><i>menu&nbsp;</i>&nbsp;context_ 
+					<menu>Context<br />_____________________________________________________________<br /><br />&lt;menu type="context_"&gt;[LABEL]<br />&lt;menu class="[floatClass]"&gt;<br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&lt;/menu&gt;<br />&nbsp;<br />
+					</menu>
+			</menu></menu>
+
+			<menu><menu type="tab_"><i>menu&nbsp;</i>&nbsp;toolbar_
+					<menu>Toolbar<br />_____________________________________________________________<br /><br />&lt;menu type="toolbar_"&gt;[LABEL]<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&nbsp;<br />
+					</menu>
+			</menu></menu>
+
+			<menu><menu type="tab_"><i>menu&nbsp;</i>&nbsp;tab_ 
+					<menu>Doc<br />_____________________________________________________________<br /><br />&lt;menu type="tab_"&gt;[LABEL]<br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br />&nbsp;<br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&nbsp;<br />
+					</menu>
+			</menu></menu>
+
+		</menu>
+
+	</menu>
 
 <!-- ==================================-->
 	<menu>=
