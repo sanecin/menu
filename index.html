@@ -71,8 +71,8 @@ menu[class*="Down"]>* {margin-top:0%;}
 
 menu[type^="doc_"],menu[type^="doc_"] menu{background-color:#b0b060;color:#ffffff;text-shadow: 2px 2px 5px #000000;}	/* ! */
 menu[type^="doc_"]:hover{background-color:#d0d070;}
-menu[type^="doc_"]>menu{position:absolute;left:100%;top:0%;opacity:0;visibility:hidden;}
-menu[type^="doc_"]:hover>menu{visibility:visible;opacity:1;}	/*z-index:1000; ... */
+menu[type^="doc_"]>menu,menu[type^="doc_"]>pre{position:absolute;left:100%;top:0%;opacity:0;visibility:hidden;}
+menu[type^="doc_"]:hover>*{visibility:visible;opacity:1;}	/*z-index:1000; ... */
 menu[type^="doc_"] .intro{background-color:#909040;}
 menu[type^="doc_"]>menu:not(.intro) {}
 
@@ -112,8 +112,9 @@ section article *{text-align:left;}/*height:312px;*/
 footer {background:#80b0d0;position:absolute;right:10px;left:10px;bottom:10px;height:66px;}/*top:5px;*/
 
 section i {padding:2px 10px;background:#80b0b0;color:#ffffff;font:10px bold;font-family:Verdana;}
+section pre {padding:10px 10px;background:#608080;color:#ffffff;font:12px bold;font-family:Verdana;}
 section h1 {font-size:20px;}
-section i,section h1 {text-shadow: 2px 2px 5px #000000;}
+section i,section pre,section h1 {text-shadow: 2px 2px 5px #000000;}
 
 section a		{display:block;}
 section a		{cursor:pointer;text-decoration:none;background-color:#50b060;color:#ffffa0;}
@@ -379,39 +380,139 @@ box-shadow:0 0 24px #000000;
 <!-- ==================================-->
 <!-- ==================================-->
 	<menu type="doc_"><i>Doc</i>
-		<menu class="intro">intro_class<br />___________________________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
+		<menu class="intro">intro_class<br />___________________________________________<br />
+<pre>
+
+
+
+
+
+						... [use] :/ ...
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
 		</menu>
 		<menu>&nbsp;<i>&nbsp;HoverDoc&nbsp;</i>
 				<br />______________<br />&nbsp;
-			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;= 
-					<menu>Menu<br />____________________________<br /><br /><br /><menu>&nbsp;&lt;menu [type="menuType"]&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu>&nbsp;<br />&nbsp;<br />
-					</menu>
+
+			<menu type="doc_"><i>menu</i> = 
+				<menu>Menu<br />____________________________<br />
+<pre>
+
+
+
+	&lt;menu [type=" ... "]&gt;
+
+		[...]
+
+	&lt;/menu&gt;
+
+
+
+					<menu > [...] </menu></pre>
+
+				</menu>
 			</menu>
 
-			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;context_ 
-					<menu>Context<br />____________________________<br /><br />&lt;menu type="context_"&gt;[LABEL]<br />&lt;menu class="[floatClass]"&gt;<br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&lt;/menu&gt;<br />&nbsp;<br />
-					</menu>
+			<menu type="doc_"><i>menu</i> =context_ 
+				<menu>Context<br />____________________________<br />
+<pre>
+
+	&lt;menu type="context_"&gt;[LABEL]&lt;menu&gt;
+
+		&lt;menu&gt;
+		... 1
+		&lt;/menu&gt;
+
+		&lt;menu&gt;
+		... 2
+		&lt;/menu&gt;
+
+	&lt;/menu&gt;&lt;/menu&gt;
+
+					<menu type="context_">[LABEL]<menu ><menu > ... 1</menu><menu > ... 2</menu></menu></menu></pre>
+
+				</menu>
 			</menu>
 
-			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;toolbar_
-					<menu>Toolbar<br />____________________________<br /><br />&lt;menu type="toolbar_"&gt;[LABEL]<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&nbsp;<br />
-					</menu>
+			<menu type="doc_"><i>menu</i> =toolbar_ 
+				<menu>Context<br />____________________________<br />
+<pre>
+
+	&lt;menu type="toolbar_"&gt;[LABEL]
+
+		&lt;menu&gt;
+		... 1
+		&lt;/menu&gt;
+
+		&lt;menu&gt;
+		... 2
+		&lt;/menu&gt;
+
+	&lt;/menu&gt;
+
+					<menu type="toolbar_">[LABEL]<menu > ... 1</menu><menu > ... 2</menu></menu></pre>
+
+				</menu>
 			</menu>
 
-			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;doc_ 
-					<menu>Doc<br />____________________________<br /><br />&lt;menu type="doc_"&gt;[LABEL]<br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br />&nbsp;<br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&nbsp;<br />
-					</menu>
+			<menu type="doc_"><i>menu</i> =doc_ 
+				<menu>Doc<br />____________________________<br />
+<pre>
+
+
+		&lt;menu type="doc_"&gt;[DOC1]
+			&lt;menu&gt;
+			... 1
+			&lt;/menu&gt;
+		&lt;/menu&gt;
+
+		&lt;menu type="doc_"&gt;[DOC2]
+			&lt;menu&gt;
+			... 2
+			&lt;/menu&gt;
+		&lt;/menu&gt;
+
+
+					<menu type="doc_">[DOC1]<menu> ... 1</menu></menu><menu type="doc_">[DOC2]<menu> ... 2</menu></menu></pre>
+
+				</menu>
 			</menu>
 
-			<menu type="doc_"><i>doc3&nbsp;</i>&nbsp;--- 
-					<menu>text_doc3<br />____________________________<br />.<br />.<br />.<br />.<br />.
-					</menu>
+			<menu type="doc_"><i>menu</i> =tab_ 
+				<menu>Tab<br />____________________________<br />
+<pre>
+
+
+		&lt;menu type="tab_"&gt;[TAB1]
+			&lt;menu&gt;
+			... 1
+			&lt;/menu&gt;
+		&lt;/menu&gt;
+
+		&lt;menu type="tab_"&gt;[TAB2]
+			&lt;menu&gt;
+			... 2
+			&lt;/menu&gt;
+		&lt;/menu&gt;
+
+
+					<menu type="tab_">[TAB1]<menu> ... 1</menu></menu><menu type="tab_">[TAB2]<menu> ... 2</menu></menu></pre>
+
+				</menu>
 			</menu>
 
-			<menu type="doc_"><i>doc3</i>&nbsp;--- 
-					<menu>text_doc30<br />___________________________<br />.<br />.<br />.<br />.<br />.
-					</menu>
-			</menu>
+
 
 			<menu type="doc_"><i>doc4</i>&nbsp;--- 
 					<menu>text_doc4<br />____________________________<br />.<br />.<br />.<br />.<br />.
