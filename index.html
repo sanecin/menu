@@ -12,7 +12,7 @@
 <meta name="description" content="[TeRmiNuS_][_Menu_Tag_][326314ebf2abdb79181.94811663@[_pack_w_1.0.xhtml]¤Main¤Hili¤0¤]" />
 <meta name="keywords" content="HTML,CSS,CSS3,HTML5" />
 <meta name="author" content="SanEcIn" />
-<meta name="revised" content="27/11/2011" />
+<meta name="revised" content="29/11/2011" />
 <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//AAD///8AAAAAAAAAAAAAAAALu7uwAAAAAAu7u7AAAAAAC7u7sAAAAAsLu7uwAAAACwu7u7AAAAALAAAAAAAAAAu7sAAAAAAAC7uwAAAAAAsLu7AAAAAACwAAAAAAAAsLu7ALuwu7Cwu7sAu7C7sLAAAAC7sLuwu7C7sLuwu7AAAAAAAAAAD8AwAA/AMAAPwDAADwAwAA8AMAAPADAADwAwAA8D8AAMA/AADAPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
 <title>[Menu_Tag][][266414ebf2abdb77ff8.26906285]</title>
 
@@ -69,7 +69,7 @@ menu[class*="Down"]>* {margin-top:0%;}
 
 /* ][type^="doc_" ... */
 
-menu[type^="doc_"],menu[type^="doc_"] menu{background-color:#b0b060;color:#ffffff;text-shadow: 2px 2px 5px #000000;}	/* ! */
+menu[type^="doc_"],menu[type^="doc_"] menu{background-color:#60b060;color:#ffffff;text-shadow: 2px 2px 5px #000000;}	/* ! */
 menu[type^="doc_"]:hover{background-color:#d0d070;}
 menu[type^="doc_"]>menu{position:absolute;left:100%;top:0%;opacity:0;visibility:hidden;}
 menu[type^="doc_"]:hover>menu{visibility:visible;opacity:1;}	/*z-index:1000; ... */
@@ -375,41 +375,41 @@ box-shadow:0 0 24px #000000;
 		<menu>&nbsp;<i>&nbsp;HoverDoc&nbsp;</i>
 				<br />______________<br />&nbsp;
 			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;= 
-					<menu>Menu<br />____________________________<br /><br />&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;
+					<menu>Menu<br />____________________________<br /><br /><menu>&nbsp;&lt;menu [type="menuType"]&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu>&nbsp;<br />&nbsp;<br />
 					</menu>
 			</menu>
 
 			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;context_ 
-					<menu>Context<br />____________________________<br /><br />&nbsp;&lt;menu type="context_"&gt;[LABEL]<br />&nbsp;&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&nbsp;&lt;/menu&gt;<br />&nbsp;&lt;/menu&gt;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;
+					<menu>Context<br />____________________________<br /><br />&lt;menu type="context_"&gt;[LABEL]<br />&lt;menu class="[floatClass]"&gt;<br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&lt;/menu&gt;<br />&nbsp;<br />
 					</menu>
 			</menu>
 
 			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;toolbar_
-					<menu>Toolbar<br />____________________________<br /><br />&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;
+					<menu>Toolbar<br />____________________________<br /><br />&lt;menu type="toolbar_"&gt;[LABEL]<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&nbsp;<br />
 					</menu>
 			</menu>
 
 			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;doc 
-					<menu>Doc<br />____________________________<br /><br />&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;
+					<menu>Doc<br />____________________________<br /><br />&lt;menu type="doc_"&gt;[LABEL]<br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br />&nbsp;<br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br /><br />&lt;/menu&gt;<br />&nbsp;<br />
 					</menu>
 			</menu>
 
-			<menu type="doc_"><i>doc3&nbsp;</i>&nbsp;Left 
+			<menu type="doc_"><i>doc3&nbsp;</i>&nbsp;--- 
 					<menu>text_doc3<br />____________________________<br />.<br />.<br />.<br />.<br />.
 					</menu>
 			</menu>
 
-			<menu type="doc_"><i>doc3</i>&nbsp;LeftDown 
+			<menu type="doc_"><i>doc3</i>&nbsp;--- 
 					<menu>text_doc30<br />___________________________<br />.<br />.<br />.<br />.<br />.
 					</menu>
 			</menu>
 
-			<menu type="doc_"><i>doc4</i>&nbsp;Up 
+			<menu type="doc_"><i>doc4</i>&nbsp;--- 
 					<menu>text_doc4<br />____________________________<br />.<br />.<br />.<br />.<br />.
 					</menu>
 			</menu>
 
-			<menu type="doc_"><i>doc40</i>&nbsp;UpLeft 
+			<menu type="doc_"><i>doc40</i>&nbsp;---
 					<menu>text_doc40<br />___________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
 					</menu>
 			</menu>
@@ -616,4 +616,4 @@ box-shadow:0 0 24px #000000;
 
 
 </body></html>
-<!-- /* [Copyright 27/11/2011 SanEcIn][] ¤][¤¤] */-->
+<!-- /* [Copyright 29/11/2011 SanEcIn][] ¤][¤¤] */-->
