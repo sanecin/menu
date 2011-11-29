@@ -28,36 +28,57 @@ section,header,article,footer,menu {display:block;}	/* html5 ... :/ ... */
 
 /* ... MENU TAG ... http://www.w3.org/TR/html5/interactive-elements.html#the-menu-element */
 
-
-section menu {border:none;}	/* ... +position:relative; ... так , может , было бы правильно ... но не так весело ... :/ ... */
-
-section menu[type="toolbar_"] {display:table-cell;}		/*position:relative;... futured ... */
-section menu[type="toolbar_"]>menu{display:table-cell;}
-
-section menu[type^="context_"]{position:relative;}	/*  if {} then floats out up level ... TAB style ... */
-section menu[type^="context_"]>menu{position:absolute;}	/* ! */
-section menu[type^="context_"]>menu>*{position:relative;}	/* ! for udefined floats */
-
-section menu[type^="context_"]>menu{visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
-section menu[type^="context_"]>menu>*{opacity:0;visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
-
-/* float vectors */
-section menu[class*="Right"] {left:100%;top:0%;}
-section menu[class*="Left"] {left:0%;top:0%;}
-section menu[class*="Up"] {top:-50%;}
-section menu[class*="Down"] {top:100%;}
-
-section menu[class*="Right"]>* {left:0%;}/*margin-top:0%;*/
-section menu[class*="Left"]>* {left:-100%;}/*margin-top:0%;*/
-section menu[class*="Up"]>* {margin-top:-50%;}
-section menu[class*="Down"]>* {margin-top:0%;}
-
-/*section menu[class*="Up"],section menu[class="Up"]>* {width:230px;height:150px;}*/
-
-section menu[type^="context_"]:hover>menu>*{visibility:visible;opacity:1;}	/* ... fired hover ... */
-/*section menu[type="context_"]:hover>*{visibility:visible;opacity:1;}			... another case ... than no need floats ... */
+menu {border:none;}	/* ... +position:relative; ... так , может , было бы правильно ... но не так весело ... :/ ... */
 
 /* ... end MENU TAG ... */
+
+/* ][type="toolbar_" ... */
+menu[type="toolbar_"] {display:table-cell;background-color:#60a060;color:#ffffff;}		/*position:relative;... futured ... */
+/*menu[type="toolbar_"]:hover {background-color:#ffffd0;}*/
+menu[type="toolbar_"]>menu{display:table-cell;}
+
+/* ][type^="context_" ... full propertyes */
+menu[type^="context_"]{position:relative;background-color:#90e090;color:#000000;}	/*  if -rel then floats out up level ... TAB style ... */
+menu[type^="context_"]:hover {background-color:#ffffd0;}
+menu[type^="context_"]>menu{position:absolute;visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
+menu[type^="context_"]>menu>*{position:relative;visibility:hidden;opacity:0;}	/*left:0%;top:0%; !relative for udefined floats */
+menu[type^="context_"]:hover>menu>*{visibility:visible;opacity:1;}
+
+
+menu[type^="context_"]>*>menu{box-shadow:0px 5px 15px #000000;-ms-box-shadow:0px 5px 15px #000000;-moz-box-shadow:0px 5px 15px #000000;-webkit-box-shadow:0px 5px 15px #000000;}
+
+menu[type^="context_"]>menu>*{-ms-transition-duration:0.5s;-moz-transition-duration:0.5s;-webkit-transition-duration:0.5s;}
+
+/*Opera BUGfix :hover transitions ... */
+menu[type^="context_"]>menu>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
+menu[type^="context_"]:hover>menu>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
+
+/* ][float vectors classes */
+menu[class*="Right"] {left:100%;top:0%;}/* */
+menu[class*="Left"] {left:0%;top:0%;}/* */
+menu[class*="Up"] {top:-50%;}
+menu[class*="Down"] {top:100%;}
+
+menu[class*="Right"]>* {left:0%;}/*margin-top:0%; */
+menu[class*="Left"]>* {left:-100%;}/*margin-top:0%; */
+menu[class*="Up"]>* {margin-top:-50%;}
+menu[class*="Down"]>* {margin-top:0%;}
+
+/*menu[class*="Up"],menu[class="Up"]>* {width:230px;height:150px;}*/
+
+
+/* ][type^="doc_" ... */
+
+menu[type^="doc_"],menu[type^="doc_"] menu{background-color:#b0b060;color:#ffffff;text-shadow: 2px 2px 5px #000000;}	/* ! */
+menu[type^="doc_"]:hover{background-color:#d0d070;}
+menu[type^="doc_"]>menu{position:absolute;left:100%;top:0%;opacity:0;visibility:hidden;}
+menu[type^="doc_"]:hover>menu{visibility:visible;opacity:1;}	/*z-index:1000; ... */
+menu[type^="doc_"] .intro{background-color:#909040;}
+menu[type^="doc_"]>menu:not(.intro) {}
+
+/* ][type^="hole" ... */
+menu[type="hole"]:hover{background-color:#80ff80;color:#000000;}
+menu[type^="context_"]>*>menu[type^="context_"]>menu:hover:not([type="hole"]){background-color:#ffff80;color:#000000;} /**/
 
 
 
@@ -93,7 +114,7 @@ section a:active	{border:none;background:#ffffff;color: #000000;}
 
 
 /* ... min ... */
-section menu,section a {
+menu,section a {
 	min-width:128px;
 	min-height:1.7em;
 	border:none;/* double */
@@ -103,7 +124,7 @@ section menu,section a {
 }
 
 /* ... min visibility ... */
-section menu {
+menu {
 	background-color:#80d080;
 	color:#000000;
 	box-shadow:0px 0px 5px #000000;
@@ -112,30 +133,9 @@ section menu {
 	-webkit-box-shadow:0px 0px 5px #000000;
 }
 
-section menu[type^="context_"]>*>*{
-	-ms-transition-duration:0.5s;
-	-moz-transition-duration:0.5s;
-	-webkit-transition-duration:0.5s;
-}
-
-/*Opera BUGfix :hover transitions ... */
-section menu[type^="context_"]:hover>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
-section menu[type^="context_"]>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
-
-section menu[type^="context_"] {background-color:#90e090;color:#000000;}
-section menu[type^="context_"]:hover {background-color:#ffffd0;}
-section menu[type^="context_"]>*>menu{box-shadow:0px 5px 15px #000000;-ms-box-shadow:0px 5px 15px #000000;-moz-box-shadow:0px 5px 15px #000000;-webkit-box-shadow:0px 5px 15px #000000;}
-
-section menu[type="toolbar_"] {background-color:#60a060;color:#ffffff;}
-/*section menu[type="toolbar_"]>menu>menu:hover {background-color:#ffffd0;}*/
-
-
-/* ... Hole Menu ... it is ... list? ... */
-section menu[type="hole"]:hover{background-color:#80ff80;color:#000000;}
-section menu[type^="context_"]>*>menu[type^="context_"]>menu:hover:not([type="hole"]){background-color:#ffff80;color:#000000;} /**/
 
 /*... тормозит ...и вызывает баг overflow ... если нет сложных меню ...*/
-section menu[type="toolbar_"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), to(transparent));}
+menu[type="toolbar_"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), to(transparent));}
 
 
 /*] ¤][¤¤] */
@@ -367,71 +367,58 @@ box-shadow:0 0 24px #000000;
 		end BUGfix_
 	</menu></menu></menu>
 <!-- ==================================-->
-	<menu>=
-	</menu>
 <!-- ==================================-->
-	<menu type="context_"><i>HoverDoc</i><menu class="Right">
-		<menu type="toolbar_"><i>HoverDoc</i>
-
-			<menu type="context_"><i>doc1&nbsp;</i>&nbsp;Down 
-				<menu class="Down">
-					<menu>text_doc1____________________________<br />.<br />.<br />.<br />.<br />.
+<menu>=
+	<menu type="doc_"><i>Doc</i>
+		<menu class="intro">intro_class<br />_______________________________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
+		</menu>
+		<menu>&nbsp;<i>&nbsp;HoverDoc&nbsp;</i>
+				<br />______________<br />&nbsp;
+			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;= 
+					<menu>Menu<br />____________________________<br /><br />&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;
 					</menu>
-				</menu>
-			</menu><br />
+			</menu>
 
-			<menu type="context_"><i>doc10</i>&nbsp;RightDown 
-				<menu class="RightDown">
-					<menu>text_doc10___________________________<br />.<br />.<br />.<br />.<br />.
+			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;context_ 
+					<menu>Context<br />____________________________<br /><br />&nbsp;&lt;menu type="context_"&gt;[LABEL]<br />&nbsp;&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&nbsp;&lt;/menu&gt;<br />&nbsp;&lt;/menu&gt;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;
 					</menu>
-				</menu>
-			</menu><br />
+			</menu>
 
-			<menu type="context_"><i>doc2&nbsp;</i>&nbsp;Right 
-				<menu class="Right">
-					<menu>text_doc2____________________________<br />.<br />.<br />.<br />.<br />.
+			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;toolbar_
+					<menu>Toolbar<br />____________________________<br /><br />&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;
 					</menu>
-				</menu>
-			</menu><br />
+			</menu>
 
-			<menu type="context_"><i>doc20</i>&nbsp;UpRight 
-				<menu class="RightUp">
-					<menu>text_doc20___________________________<br />.<br />.<br />.<br />.<br />.
+			<menu type="doc_"><i>menu&nbsp;</i>&nbsp;doc 
+					<menu>Doc<br />____________________________<br /><br />&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;
 					</menu>
-				</menu>
-			</menu><br />
+			</menu>
 
-			<menu type="context_"><i>doc3&nbsp;</i>&nbsp;Left 
-				<menu class="Left">
-					<menu>text_doc3____________________________<br />.<br />.<br />.<br />.<br />.
+			<menu type="doc_"><i>doc3&nbsp;</i>&nbsp;Left 
+					<menu>text_doc3<br />____________________________<br />.<br />.<br />.<br />.<br />.
 					</menu>
-				</menu>
-			</menu><br />
+			</menu>
 
-			<menu type="context_"><i>doc3</i>&nbsp;LeftDown 
-				<menu class="LeftDown">
-					<menu>text_doc30___________________________<br />.<br />.<br />.<br />.<br />.
+			<menu type="doc_"><i>doc3</i>&nbsp;LeftDown 
+					<menu>text_doc30<br />___________________________<br />.<br />.<br />.<br />.<br />.
 					</menu>
-				</menu>
-			</menu><br />
+			</menu>
 
-			<menu type="context_"><i>doc4</i>&nbsp;Up 
-				<menu class="Up">
-					<menu>text_doc4____________________________<br />.<br />.<br />.<br />.<br />.
+			<menu type="doc_"><i>doc4</i>&nbsp;Up 
+					<menu>text_doc4<br />____________________________<br />.<br />.<br />.<br />.<br />.
 					</menu>
-				</menu>
-			</menu><br />
+			</menu>
 
-			<menu type="context_"><i>doc40</i>&nbsp;UpLeft 
-				<menu class="LeftUp">
-					<menu>text_doc40___________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
+			<menu type="doc_"><i>doc40</i>&nbsp;UpLeft 
+					<menu>text_doc40<br />___________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
 					</menu>
-				</menu>
-			</menu><br />
+			</menu>
 
 
 		</menu>
-	</menu></menu>
+
+	</menu>
+</menu>
 
 <!-- ==================================-->
 	<menu>=
