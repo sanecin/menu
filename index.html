@@ -71,10 +71,10 @@ menu[class*="Down"]>* {margin-top:0%;}
 
 menu[type^="doc_"],menu[type^="doc_"] menu{background-color:#b0b060;color:#ffffff;text-shadow: 2px 2px 5px #000000;}	/* ! */
 menu[type^="doc_"]:hover{background-color:#d0d070;}
-menu[type^="doc_"]>menu,menu[type^="doc_"]>pre{position:absolute;left:100%;top:0%;opacity:0;visibility:hidden;}
-menu[type^="doc_"]:hover>*{visibility:visible;opacity:1;}	/*z-index:1000; ... */
+menu[type^="doc_"]>menu {position:absolute;left:100%;top:0%;opacity:0;visibility:hidden;}
+menu[type^="doc_"]:hover>menu{visibility:visible;opacity:1;}	/*z-index:1000; ... */
 
-menu[type^="doc_"] .intro{background-color:#606020;}
+menu[type^="doc_"] .intro {background-color:#606020;}
 menu[type^="doc_"] .intro pre{visibility:hidden;}
 menu[type^="doc_"]>menu:not(.intro) {}
 
@@ -383,8 +383,8 @@ box-shadow:0 0 24px #000000;
 <!-- ==================================-->
 <!-- ==================================-->
 	<menu type="doc_"><i>Doc</i>
-		<menu class="intro">intro_class<br />___________________________________________<br />
-<menu type="toolbar_" class="Right"><menu type="context_">[LABEL]<menu class="Down"><menu > ... 1</menu><menu > ... 2</menu></menu></menu></menu>
+		<menu class="intro">intro_class<br /><br />
+			<menu type="toolbar_"><menu><menu type="context_">[_context_]<menu class="Down"><menu > ... 1</menu><menu > ... 2</menu> </menu></menu></menu></menu>
 <pre>													&nbsp;
 
 
@@ -531,7 +531,7 @@ box-shadow:0 0 24px #000000;
 <!-- ==================================-->
 	<menu type="tab_"><i>Tab</i>
 		<menu class="intro">intro_class<br /><br />
-<menu type="toolbar_" class="Right"><menu type="context_">[LABEL]<menu class="Down"><menu > ... 1</menu><menu > ... 2</menu></menu></menu></menu>
+			<menu type="toolbar_"><menu><menu type="context_">[LABEL]<menu class="Down"><menu > ... 1</menu><menu > ... 2</menu> </menu></menu></menu></menu>
 <pre>																					&nbsp;
 
 
