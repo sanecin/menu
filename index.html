@@ -381,7 +381,7 @@ box-shadow:0 0 24px #000000;
 <!-- ==================================-->
 	<menu type="doc_"><i>Doc</i>
 		<menu class="intro">intro_class<br />___________________________________________<br />
-<pre>
+<pre>												&nbsp;
 
 
 
@@ -407,7 +407,8 @@ box-shadow:0 0 24px #000000;
 
 			<menu type="doc_"><i>menu</i> = 
 				<menu>Menu<br />____________________________<br />
-<pre>
+<pre>								&nbsp;
+
 
 
 
@@ -419,6 +420,8 @@ box-shadow:0 0 24px #000000;
 
 
 
+
+
 					<menu > [...] </menu></pre>
 
 				</menu>
@@ -426,20 +429,21 @@ box-shadow:0 0 24px #000000;
 
 			<menu type="doc_"><i>menu</i> =context_ 
 				<menu>Context<br />____________________________<br />
-<pre>
+<pre>								&nbsp;
 
-	&lt;menu type="context_"&gt;[LABEL]&lt;menu&gt;
-
+	&lt;menu type="context_"&gt;[LABEL]
 		&lt;menu&gt;
-		... 1
+
+			&lt;menu&gt;
+			... 1
+			&lt;/menu&gt;
+
+			&lt;menu&gt;
+			... 2
+			&lt;/menu&gt;
+
 		&lt;/menu&gt;
-
-		&lt;menu&gt;
-		... 2
-		&lt;/menu&gt;
-
-	&lt;/menu&gt;&lt;/menu&gt;
-
+	&lt;/menu&gt;
 					<menu type="context_">[LABEL]<menu ><menu > ... 1</menu><menu > ... 2</menu></menu></menu></pre>
 
 				</menu>
@@ -447,7 +451,7 @@ box-shadow:0 0 24px #000000;
 
 			<menu type="doc_"><i>menu</i> =toolbar_ 
 				<menu>Context<br />____________________________<br />
-<pre>
+<pre>								&nbsp;
 
 	&lt;menu type="toolbar_"&gt;[LABEL]
 
@@ -461,15 +465,16 @@ box-shadow:0 0 24px #000000;
 
 	&lt;/menu&gt;
 
-					<menu type="toolbar_">[LABEL]<menu > ... 1</menu><menu > ... 2</menu></menu></pre>
+
+					<menu type="toolbar_">[LABEL]&nbsp;<menu > ... 1</menu><menu > ... 2</menu></menu></pre>
 
 				</menu>
 			</menu>
 
 			<menu type="doc_"><i>menu</i> =doc_ 
 				<menu>Doc<br />____________________________<br />
-<pre>
 
+<pre>								&nbsp;
 
 		&lt;menu type="doc_"&gt;[DOC1]
 			&lt;menu&gt;
@@ -483,7 +488,6 @@ box-shadow:0 0 24px #000000;
 			&lt;/menu&gt;
 		&lt;/menu&gt;
 
-
 					<menu type="doc_">[DOC1]<menu> ... 1</menu></menu><menu type="doc_">[DOC2]<menu> ... 2</menu></menu></pre>
 
 				</menu>
@@ -491,8 +495,7 @@ box-shadow:0 0 24px #000000;
 
 			<menu type="doc_"><i>menu</i> =tab_ 
 				<menu>Tab<br />____________________________<br />
-<pre>
-
+<pre>								&nbsp;
 
 		&lt;menu type="tab_"&gt;[TAB1]
 			&lt;menu&gt;
@@ -506,7 +509,6 @@ box-shadow:0 0 24px #000000;
 			&lt;/menu&gt;
 		&lt;/menu&gt;
 
-
 					<menu type="tab_">[TAB1]<menu> ... 1</menu></menu><menu type="tab_">[TAB2]<menu> ... 2</menu></menu></pre>
 
 				</menu>
@@ -514,15 +516,7 @@ box-shadow:0 0 24px #000000;
 
 
 
-			<menu type="doc_"><i>doc4</i>&nbsp;--- 
-					<menu>text_doc4<br />____________________________<br />.<br />.<br />.<br />.<br />.
-					</menu>
-			</menu>
 
-			<menu type="doc_"><i>doc40</i>&nbsp;---
-					<menu>text_doc40<br />___________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
-					</menu>
-			</menu>
 
 
 		</menu>
@@ -531,29 +525,144 @@ box-shadow:0 0 24px #000000;
 
 <!-- ==================================-->
 	<menu type="tab_"><i>Tab</i>
-		<menu class="intro">intro_class<br />_____________________________________________________________<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.
+		<menu class="intro">intro_class<br /><br />
+<pre>																				&nbsp;
+
+
+
+
+
+						... [use] :/ ...
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
 		</menu>
-		<menu><i>&nbsp;HoverTab&nbsp;</i><br />
-			_____________________________________________________________<br />&nbsp;
-			<menu><menu type="tab_"><i>menu&nbsp;</i>&nbsp;= 
-					<menu>Menu<br />_____________________________________________________________<br /><br /><br /><menu>&nbsp;&lt;menu [type="menuType"]&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu>&nbsp;<br />&nbsp;<br />
-					</menu>
+		<menu>&nbsp;<i>&nbsp;HoverTab&nbsp;</i>
+				<br />______________<br />&nbsp;
+
+			<menu><menu type="tab_"><i>menu</i> = 
+				<menu>Menu<br />____________________________<br />
+<pre>																				&nbsp;
+
+
+
+
+	&lt;menu [type=" ... "]&gt;
+
+		[...]
+
+	&lt;/menu&gt;
+
+
+
+
+
+					<menu > [...] </menu></pre>
+
+				</menu>&nbsp;
 			</menu></menu>
 
-			<menu><menu type="tab_"><i>menu&nbsp;</i>&nbsp;context_ 
-					<menu>Context<br />_____________________________________________________________<br /><br />&lt;menu type="context_"&gt;[LABEL]<br />&lt;menu class="[floatClass]"&gt;<br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&lt;/menu&gt;<br />&nbsp;<br />
-					</menu>
-			</menu></menu>
+			<menu type="tab_"><i>menu</i> =context_ 
+				<menu>Context<br />____________________________<br />
+<pre>																				&nbsp;
 
-			<menu><menu type="tab_"><i>menu&nbsp;</i>&nbsp;toolbar_
-					<menu>Toolbar<br />_____________________________________________________________<br /><br />&lt;menu type="toolbar_"&gt;[LABEL]<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&lt;menu&gt;<menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu>&lt;/menu&gt;<br /><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&nbsp;<br />
-					</menu>
-			</menu></menu>
+	&lt;menu type="context_"&gt;[LABEL]
+		&lt;menu&gt;
 
-			<menu><menu type="tab_"><i>menu&nbsp;</i>&nbsp;tab_ 
-					<menu>Doc<br />_____________________________________________________________<br /><br />&lt;menu type="tab_"&gt;[LABEL]<br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br /><br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;<br /></menu><br />&nbsp;<br /><menu>&nbsp;&lt;menu&gt;<br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br />&nbsp;&lt;/menu&gt;</menu><br />&nbsp;&nbsp;.&nbsp;.&nbsp;.<br /><br />&lt;/menu&gt;<br />&nbsp;<br />
-					</menu>
-			</menu></menu>
+			&lt;menu&gt;
+			... 1
+			&lt;/menu&gt;
+
+			&lt;menu&gt;
+			... 2
+			&lt;/menu&gt;
+
+		&lt;/menu&gt;
+	&lt;/menu&gt;
+					<menu type="context_">[LABEL]<menu ><menu > ... 1</menu><menu > ... 2</menu></menu></menu></pre>
+
+				</menu>
+			</menu>
+
+			<menu type="tab_"><i>menu</i> =toolbar_ 
+				<menu>Context<br />____________________________<br />
+<pre>																				&nbsp;
+
+	&lt;menu type="toolbar_"&gt;[LABEL]
+
+		&lt;menu&gt;
+		... 1
+		&lt;/menu&gt;
+
+		&lt;menu&gt;
+		... 2
+		&lt;/menu&gt;
+
+	&lt;/menu&gt;
+
+
+					<menu type="toolbar_">[LABEL]&nbsp;<menu > ... 1</menu><menu > ... 2</menu></menu></pre>
+
+				</menu>
+			</menu>
+
+			<menu type="tab_"><i>menu</i> =doc_ 
+				<menu>Doc<br />____________________________<br />
+
+<pre>																				&nbsp;
+
+		&lt;menu type="doc_"&gt;[DOC1]
+			&lt;menu&gt;
+			... 1
+			&lt;/menu&gt;
+		&lt;/menu&gt;
+
+		&lt;menu type="doc_"&gt;[DOC2]
+			&lt;menu&gt;
+			... 2
+			&lt;/menu&gt;
+		&lt;/menu&gt;
+
+					<menu type="doc_">[DOC1]<menu> ... 1</menu></menu><menu type="doc_">[DOC2]<menu> ... 2</menu></menu></pre>
+
+				</menu>
+			</menu>
+
+			<menu type="tab_"><i>menu</i> =tab_ 
+				<menu>Tab<br />____________________________<br />
+<pre>																				&nbsp;
+
+		&lt;menu type="tab_"&gt;[TAB1]
+			&lt;menu&gt;
+			... 1
+			&lt;/menu&gt;
+		&lt;/menu&gt;
+
+		&lt;menu type="tab_"&gt;[TAB2]
+			&lt;menu&gt;
+			... 2
+			&lt;/menu&gt;
+		&lt;/menu&gt;
+
+					<menu type="tab_">[TAB1]<menu> ... 1</menu></menu><menu type="tab_">[TAB2]<menu> ... 2</menu></menu></pre>
+
+				</menu>
+			</menu>
+
+
+
+
+
 
 		</menu>
 
