@@ -130,7 +130,7 @@ section a:active	{border:none;background:#ffffff;color: #000000;}
 /* ... min ... */
 menu,menu a {
 	min-width:128px;
-	min-height:1.7em;
+	min-height:20px;
 	border:none;/* double */
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -436,19 +436,19 @@ box-shadow:0 0 24px #000000;
 <pre>								&nbsp;
 
 	&lt;menu type="context_"&gt;[LABEL]
-		&lt;menu&gt;
+		&lt;menu class="Down"&gt;
 
 			&lt;menu&gt;
 			... 1
 			&lt;/menu&gt;
 
 			&lt;menu&gt;
-			... 2
+			... 2 ...
 			&lt;/menu&gt;
 
 		&lt;/menu&gt;
 	&lt;/menu&gt;
-					<menu type="context_">[LABEL]<menu ><menu > ... 1</menu><menu > ... 2</menu></menu></menu></pre>
+					<menu type="context_">[LABEL]<menu class="Down"><menu > ... 1</menu><menu > ... 2</menu></menu></menu></pre>
 
 				</menu>
 			</menu>
@@ -586,7 +586,7 @@ box-shadow:0 0 24px #000000;
 <pre>																				&nbsp;
 
 	&lt;menu type="context_"&gt;[LABEL]
-		&lt;menu&gt;
+		&lt;menu class="Down"&gt;
 
 			&lt;menu&gt;
 			... 1
@@ -598,7 +598,7 @@ box-shadow:0 0 24px #000000;
 
 		&lt;/menu&gt;
 	&lt;/menu&gt;
-					<menu type="context_">[LABEL]<menu ><menu > ... 1</menu><menu > ... 2</menu></menu></menu></pre>
+					<menu type="context_">[LABEL]<menu class="Down"><menu > ... 1</menu><menu > ... 2</menu></menu></menu></pre>
 
 				</menu>
 			</menu>
@@ -739,8 +739,6 @@ box-shadow:0 0 24px #000000;
 	<menu type="context_">context*&gt;toolbar
 		<menu class="Left"><menu type="toolbar_">[Toolbar1]
 			<menu>=
-			</menu>
-			<menu><a href="#url">a=href</a>
 			</menu>
 			<menu type="context_">[=context]<menu>
 				<menu>=
