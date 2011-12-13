@@ -41,10 +41,17 @@ menu[type="toolbar_"]>menu{display:table-cell;}
 menu[type^="context_"]{position:relative;background-color:#90e090;color:#000000;}	/*  if -rel then floats out up level ... TAB style ... */
 menu[type^="context_"]:hover {background-color:#ffffd0;}
 menu[type^="context_"]>menu{position:absolute;visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
-menu[type^="context_"]>menu>*{position:relative;visibility:hidden;opacity:0;}	/*left:0%;top:0%; !relative for udefined floats */
-menu[type^="context_"]:hover>menu>*{visibility:visible;opacity:1;}
-
-
+menu[type^="context_"]>menu>*{position:relative;visibility:hidden;opacity:0;
+	-webkit-transform:scale(0);
+	-moz-transform:scale(0);
+	-o-transform:scale(0);
+}
+	/*left:0%;top:0%; !relative for udefined floats */
+menu[type^="context_"]:hover>menu>*{visibility:visible;opacity:1;
+	-webkit-transform:scale(1);
+	-moz-transform:scale(1);
+	-o-transform:scale(1);
+}
 menu[type^="context_"]>*>menu{box-shadow:0px 5px 15px #000000;-ms-box-shadow:0px 5px 15px #000000;-moz-box-shadow:0px 5px 15px #000000;-webkit-box-shadow:0px 5px 15px #000000;}
 
 menu[type^="context_"]>menu>*{-ms-transition-duration:0.5s;-moz-transition-duration:0.5s;-webkit-transition-duration:0.5s;}
