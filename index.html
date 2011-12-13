@@ -54,7 +54,9 @@ menu[type^="context_"]:hover>menu>*{visibility:visible;opacity:1;
 }
 menu[type^="context_"]>*>menu{box-shadow:0px 5px 15px #000000;-ms-box-shadow:0px 5px 15px #000000;-moz-box-shadow:0px 5px 15px #000000;-webkit-box-shadow:0px 5px 15px #000000;}
 
-menu[type^="context_"]>menu>*{-ms-transition-duration:0.5s;-moz-transition-duration:0.5s;-webkit-transition-duration:0.5s;}
+menu[type^="doc_"]>menu,
+menu[type^="tab_"]>menu,
+menu[type^="context_"]>menu>*{-ms-transition-duration:0.5s;-o-transition-duration:0.5s;-moz-transition-duration:0.5s;-webkit-transition-duration:0.5s;}
 
 /*Opera BUGfix :hover transitions ... */
 menu[type^="context_"]>menu>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
