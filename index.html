@@ -9,28 +9,70 @@
 <!DOCTYPE html><html>
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=windows-1251" />
-<meta name="description" content="[TeRmiNuS_][_Menu_Tag_][326314ebf2abdb79181.94811663@[_pack_w_1.0.xhtml]¤Main¤Hili¤0¤]" />
+<meta name="description" content="[TeRmiNuS_][_Menu_Tag_][295374ef6645ab388b8.43431168@[_pack_w_1.0.xhtml]¤Main¤Hili¤0¤]" />
 <meta name="keywords" content="HTML,CSS,CSS3,HTML5" />
 <meta name="author" content="SanEcIn" />
 <meta name="revised" content="29/11/2011" />
-<link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//AAD///8AAAAAAAAAAAAAAAALu7uwAAAAAAu7u7AAAAAAC7u7sAAAAAsLu7uwAAAACwu7u7AAAAALAAAAAAAAAAu7sAAAAAAAC7uwAAAAAAsLu7AAAAAACwAAAAAAAAsLu7ALuwu7Cwu7sAu7C7sLAAAAC7sLuwu7C7sLuwu7AAAAAAAAAAD8AwAA/AMAAPwDAADwAwAA8AMAAPADAADwAwAA8D8AAMA/AADAPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
-<title>[Menu_Tag][][266414ebf2abdb77ff8.26906285]</title>
+<link rel="shortcut icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAbklEQVR4nK1SQQ7AIAiDhf9/mSVbYqgpE6a9VW2hoIqIywb0MXA88cB1wQ2swqMqDNgcpmB01Wt9dRArkapzpMgtSEYAdyqggTBCY3jMQP9YWHZBVkl3lBpQCUhfbK+RGnR+IjNoDfPQT8xQ6OMGv5MPPSpwdkYAAAAASUVORK5CYII=" />
+<title>[Menu_Tag][][234034ef6645ab37739.76901884]</title>
+
+<style>
+/*[ === default view ===*/
+
+section {position:relative;background:#d0ffd0;margin:20px auto;padding:10px;width:800px;height:512px;}
+
+section *{margin:0;padding:0;}
+section *{color:#ffffff;font-size:12px;font-weight:900;font-family:Verdana,Arial,Tahoma,Courier;}
+section *{text-align:center;}
+
+section,section header,section article,section footer,section i {border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;}
+
+section header,section footer,section i {border: 2px #000000 solid;}
+
+section header{background:#80c0c0;margin-bottom:20px;padding:10px;}
+
+section article {position:relative;background:#b0e0b0;margin:20px auto;padding:10px;color:#ffffff;font-size:16px;font-weight:900;font-family:Verdana,Arial,Tahoma,Courier;}
+section article *{text-align:left;}/*height:312px;*/
+
+footer {background:#80b0d0;position:absolute;right:10px;left:10px;bottom:10px;height:66px;}/*top:5px;*/
+
+section i {padding:2px 10px;background:#80b0b0;color:#ffffff;font:10px bold;font-family:Verdana;}
+section pre {padding:10px 10px;background:#608080;color:#ffffff;font:12px bold;font-family:Verdana;}
+section h1 {font-size:20px;}
+section i,section pre,section h1 {text-shadow: 2px 2px 5px #000000;}
+
+section a		{display:block;}
+section a		{cursor:pointer;text-decoration:none;background-color:#50b060;color:#ffffa0;}
+section a:link		{border:none;}
+section a:visited	{border:none;color:#ffff00;}
+section a:hover		{border:none;background:#d0ffd0;color:#000000;}
+section a:active	{border:none;background:#ffffff;color: #000000;}
+
+
+/*] ¤][¤¤] */
+
+</style>
 
 <style>
 
-/*[¤[TeRmiNuS]@[menu_tag_css]¤v_1.9¤ ... */
-/*[date¤11:11:2011]¤¤code_[ ... */
+/*[¤[TeRmiNuS_]@[menu.css]¤v_2.1_¤ ... */
+/*[date¤21:12:2011]¤¤code_[ ... */
 
-* {z-index:1;cursor:default;}/**/
+/**/
+* {z-index:1;cursor:default;}
 *:hover {z-index:1000;}
 
-section,header,article,footer,menu {display:block;}	/* html5 ... :/ ... */
+section,header,article,footer,menu {display:block;}/*	 html5 ... :/ ... */
 
 /* ... MENU TAG ... http://www.w3.org/TR/html5/interactive-elements.html#the-menu-element */
 
-menu {border:none;}	/* ... +position:relative; ... так , может , было бы правильно ... но не так весело ... :/ ... */
+menu {}	/* ... +position:relative; ... так , может , было бы правильно ... но не так весело ... :/ ... */
 
 /* ... end MENU TAG ... */
+
+/* ][type="list" ... */
+menu[type="list"] {background-color:#509050;color:#ffffff;}
+menu[type="list"]:hover {background-color:#80ff80;color:#000000;}
 
 /* ][type="toolbar_" ... */
 menu[type="toolbar_"] {display:table-cell;background-color:#60a060;color:#ffffff;}		/*position:relative;... futured ... */
@@ -41,26 +83,29 @@ menu[type="toolbar_"]>menu{display:table-cell;}
 menu[type^="context_"]{position:relative;background-color:#90e090;color:#000000;}	/*  if -rel then floats out up level ... TAB style ... */
 menu[type^="context_"]:hover {background-color:#ffffd0;}
 menu[type^="context_"]>menu{position:absolute;visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
-menu[type^="context_"]>menu>*{position:relative;visibility:hidden;opacity:0;
-	-webkit-transform:scale(0);
-	-moz-transform:scale(0);
-	-o-transform:scale(0);
-}
-	/*left:0%;top:0%; !relative for udefined floats */
-menu[type^="context_"]:hover>menu>*{visibility:visible;opacity:1;
-	-webkit-transform:scale(1);
-	-moz-transform:scale(1);
-	-o-transform:scale(1);
-}
+menu[type^="context_"]>menu>*{position:relative;visibility:hidden;opacity:0;}	/*left:0%;top:0%; !relative for udefined floats */
+menu[type^="context_"]:hover>menu>*{visibility:visible;opacity:1;}
+
+
 menu[type^="context_"]>*>menu{box-shadow:0px 5px 15px #000000;-ms-box-shadow:0px 5px 15px #000000;-moz-box-shadow:0px 5px 15px #000000;-webkit-box-shadow:0px 5px 15px #000000;}
 
-menu[type^="doc_"]>menu,
-menu[type^="tab_"]>menu,
-menu[type^="context_"]>menu>*{-ms-transition-duration:0.5s;-o-transition-duration:0.5s;-moz-transition-duration:0.5s;-webkit-transition-duration:0.5s;}
+menu[type^="context_"]>menu>*{-ms-transition-duration:0.5s;-moz-transition-duration:0.5s;-webkit-transition-duration:0.5s;}
 
 /*Opera BUGfix :hover transitions ... */
 menu[type^="context_"]>menu>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
 menu[type^="context_"]:hover>menu>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
+
+/*][[type="float"][... */
+/*menu[type*="float"] {position:relative;min-height:30px;}## ... not final ! ... oncomment ... */
+/*menu[type*="float"]>menu {position:absolute;visibility:hidden;}##background-color:transparent;*/
+/* menu[type*="float"]>*>*{position:relative;visibility:visible;-o-transform:scale(0);-moz-transform:scale(0);-webkit-transform:scale(0);}... */
+/*menu[type*="float"]:hover>*>* {-o-transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);}		opacity:1;z-index:1000;	... fired blink hover ... */
+menu[type*="float"]>menu>menu{-o-transform:scale(0);-moz-transform:scale(0);-webkit-transform:scale(0);}
+menu[type*="float"]:hover>menu>menu{-o-transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);}
+
+/*][[type="rotate"][... */
+menu[type*="rotate"]>menu{-o-transform:rotate(0deg);-moz-transform:rotate(0deg);-webkit-transform:rotate(0deg);}
+menu[type*="rotate"]:hover>menu{-o-transform:rotate(-5deg);-moz-transform:rotate(-5deg);-webkit-transform:rotate(-5deg);}
 
 /* ][float vectors classes */
 menu[class*="Right"] {left:100%;top:0%;}/* */
@@ -99,42 +144,13 @@ menu[type^="tab_"] .intro pre{visibility:hidden;}
 menu[type^="tab_"]>menu:not(.intro) {}
 
 /* ][type^="hole" ... */
-menu[type="hole"]:hover{background-color:#80ff80;color:#000000;}
+menu[type="hole"]{background-color:#70c070;color:#000000;}
+menu[type="hole"]:hover{background-color:#80ff80;}
 menu[type^="context_"]>*>menu[type^="context_"]>menu:hover:not([type="hole"]){background-color:#ffff80;color:#000000;} /**/
 
 
 
 /*[ === default view ===*/
-
-section {position:relative;background:#d0ffd0;margin:20px auto;padding:10px;width:800px;height:512px;}
-
-section *{margin:0;padding:0;}
-section *{color:#ffffff;font-size:12px;font-weight:900;font-family:Verdana,Arial,Tahoma,Courier;}
-section *{text-align:center;}
-
-section,section header,section article,section footer,section i {border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;}
-
-section header,section footer,section i {border: 2px #000000 solid;}
-
-section header{background:#80c0c0;margin-bottom:20px;padding:10px;}
-
-section article {position:relative;background:#b0e0b0;margin:20px auto;padding:10px;color:#ffffff;font-size:16px;font-weight:900;font-family:Verdana,Arial,Tahoma,Courier;}
-section article *{text-align:left;}/*height:312px;*/
-
-footer {background:#80b0d0;position:absolute;right:10px;left:10px;bottom:10px;height:66px;}/*top:5px;*/
-
-section i {padding:2px 10px;background:#80b0b0;color:#ffffff;font:10px bold;font-family:Verdana;}
-section pre {padding:10px 10px;background:#608080;color:#ffffff;font:12px bold;font-family:Verdana;}
-section h1 {font-size:20px;}
-section i,section pre,section h1 {text-shadow: 2px 2px 5px #000000;}
-
-section a		{display:block;}
-section a		{cursor:pointer;text-decoration:none;background-color:#50b060;color:#ffffa0;}
-section a:link		{border:none;}
-section a:visited	{border:none;color:#ffff00;}
-section a:hover		{border:none;background:#d0ffd0;color:#000000;}
-section a:active	{border:none;background:#ffffff;color: #000000;}
-
 
 /* ... min ... */
 menu,menu a {
@@ -146,8 +162,18 @@ menu,menu a {
 	-webkit-border-radius: 5px;
 }
 
+menu a {display:block;	-webkit-transform:scale(1);
+	-moz-transform:scale(1);
+	-o-transform:scale(1);
+}
+menu a {cursor:pointer;text-decoration:none;background-color:#50b060;color:#ffffa0;}/*  */
+menu a:link {border:none;}
+menu a:visited {border:none;color:#ffff00;}
+menu a:visited:hover,menu a:hover {border:none;background:#d0ffd0;color:#000000;}
+menu a:active	{border:none;background:#ffffff;color: #000000;}
+
 /* ... min visibility ... */
-menu {
+menu,menu:not([type]) {
 	background-color:#80d080;
 	color:#000000;
 	box-shadow:0px 0px 5px #000000;
@@ -157,11 +183,11 @@ menu {
 }
 
 
-/*... тормозит ...и вызывает баг overflow ... если нет сложных меню ...*/
+/*... тормозит ...и вызывает баг overflow ... если нет сложных меню ...
 menu[type="toolbar_"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), to(transparent));}
+*/
 
-
-/*] ¤][¤¤] */
+/* ][Copyright 21/12/2011 SanEcIn][] ¤][¤¤] */
 
 </style>
 
@@ -206,9 +232,9 @@ menu[type="toolbar_"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradi
 	-webkit-transform:scale(0);
 	-moz-transform:scale(0);
 	-o-transform:scale(0);
-box-shadow:0 0 24px #000000;
--webkit-box-shadow:0 0 24px #000000;
--moz-box-shadow:0 0 24px #000000;
+box-shadow:0px 5px 24px #000000;
+-webkit-box-shadow:0px 5px 24px #000000;
+-moz-box-shadow:0px 5px 24px #000000;
 }
 
 
@@ -239,6 +265,11 @@ box-shadow:0 0 24px #000000;
 
 </head>
 <body>
+
+<a href="http://sanecin.github.com/menu/" title="GitHub">
+	<!--img style="position: absolute; top: 0; left: 0; border: 0;" src="/files/theme/fork_me_on_GitHub_green.png" alt="GitHub" /-->
+<img style="position: absolute; top: 0; left: 0; border: 0;" src="data:image/png;base64,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" />
+</a>
 
 <section>
 	<header>
@@ -797,18 +828,18 @@ box-shadow:0 0 24px #000000;
 		&nbsp;hav&nbsp;a&nbsp;BUG&nbsp;...<br />
 		...&nbsp;futured&nbsp;...&nbsp;:/&nbsp;... <br />&nbsp;
 	</menu>
-	<menu type="context_"><i>Right</i><menu class="Right"><menu>
+	<menu type="context_float"><i>Right</i><menu class="Right"><menu>
 		Context==========Right<br /><i></i><br /><br /><i></i><br /><br /><i></i><br />&nbsp;
 		<menu>=
 		</menu>
 		<menu><a href="#url">a=href</a>
 		</menu>
-		<menu type="context_"><i>Right</i><menu class="Right">
+		<menu type="context_float"><i>Right</i><menu class="Right">
 			<menu>=
 			</menu>
 			<menu><a href="#url">a=href</a>
 			</menu>
-			<menu type="context_"><i>to</i><br /><i>Right</i><menu type="hole" class="Right">
+			<menu type="context_float"><i>to</i><br /><i>Right</i><menu type="hole" class="Right">
 				<menu>=
 				</menu>
 				<menu><a href="#url">a=href</a>
@@ -820,16 +851,16 @@ box-shadow:0 0 24px #000000;
 		<menu>=
 		</menu>
 	</menu></menu></menu>
-	<menu type="context_"><i>Left </i><menu class="Left"><menu>
+	<menu type="context_float"><i>Left </i><menu class="Left"><menu>
 		Context==========Left<br /><i></i><br /><br /><i></i><br /><br /><i></i><br />&nbsp;
 	</menu></menu></menu>
-	<menu type="context_"><i> Up </i><menu class="Up"><menu>
+	<menu type="context_float"><i> Up </i><menu class="Up"><menu>
 		Context==========Up<br /><br /><i></i><br /><br /><i></i><br />&nbsp;
 	</menu></menu></menu>
-	<menu type="context_"><i>UpLeft</i><menu class="UpLeft"><menu>
+	<menu type="context_float"><i>UpLeft</i><menu class="UpLeft"><menu>
 		Context==========UpLeft<br /><i></i><br /><br /><i></i><br /><br /><i></i><br /><br /><i></i><br /><br /><i></i><br />&nbsp;
 	</menu></menu></menu>
-	<menu type="context_"><i>Multi</i>
+	<menu type="context_float"><i>Multi</i>
 		<menu class="UpLeft"><menu>
 			Context==========UpLeft<br /><i></i><br /><br /><i></i><br /><br /><i></i><br /><br /><i></i><br /><br /><i></i><br />&nbsp;
 		</menu></menu>
@@ -846,14 +877,14 @@ box-shadow:0 0 24px #000000;
 			Context==========Up<br /><br /><i></i><br /><br /><i></i><br />&nbsp;
 		</menu></menu>
 	</menu>
-	<menu type="context_"><i>Down</i><menu class="Down"><menu>
+	<menu type="context_float"><i>Down</i><menu class="Down"><menu>
 		Context==========Down<br /><i></i><br /><br /><i></i><br /><br /><i></i><br />&nbsp;
 	</menu></menu></menu>
 </menu></menu>
 </menu>
 
 <menu>
-	<menu type="context_"><i>About</i><menu class="Down">
+	<menu type="context_rotate"><i>About</i><menu class="Down">
 		<menu>
 			...&nbsp;this&nbsp;is&nbsp;MENU&nbsp;tag&nbsp;expirience&nbsp;...&nbsp;<br />
 			&nbsp;non normative ...<br />
